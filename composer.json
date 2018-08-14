@@ -1,0 +1,17 @@
+{
+    "name": "arnaud/blog-mvc",
+    "description": "Un blog MVC",
+    "authors": [
+        {
+            "name": "Arnaud POINTET",
+            "email": "arnaud@oipnet.info"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Core\\": "core/",
+            "App\\": "app/"
+        }
+    }
+}
