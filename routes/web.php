@@ -1,4 +1,5 @@
 <?php
 
-$router->get('/', 'HomeController@index', 'homepage');
-$router->get('/contact', 'ContactController@index', 'contact');
+$router->get( 'HomeController@index', 'homepage');
+$router->get( 'ArticleController@show', 'article');
+$router->get('ContactController@index', 'contact');

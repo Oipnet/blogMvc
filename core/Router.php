@@ -12,10 +12,15 @@ class Router {
 
     public function dispatch() 
     {
-        $url = $_SERVER['REQUEST_URI'];
+        $url = ltrim($_SERVER['REQUEST_URI'], '/');
+        $url = explode('/', $url);
         $method = $_SERVER['REQUEST_METHOD'];
 
-        $page = $_GET['page'] ?? 'homepage';
+        $page = $url[0];
+        if (! strlen($page)) {
+            $page = 'homepage';
+        }
+
         $route = $this->routes[$method][$page] ?? null;
 
         if (! $route) {
@@ -31,12 +36,12 @@ class Router {
         if (! method_exists($controllerClass, $route['action'])) {
             throw new RouteNotFoundException('La methode demandée n\'existe pas');
         }
-        
-        // TODO : Pass parameters
-        return call_user_func_array([$controllerClass, $route['action']], []);
+
+        array_shift($url);
+        return call_user_func_array([$controllerClass, $route['action']], $url);
     }
 
-    public function get($path, $controller, $name): self
+    public function get($controller, $name): self
     {
         $controller = explode('@', $controller);
         if (count($controller) !== 2) {

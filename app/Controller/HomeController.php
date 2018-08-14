@@ -1,13 +1,13 @@
 <?php
 namespace App\Controller;
 
+use App\Model\Post;
+
 class HomeController extends \Core\Controller {
     public function index()
     {
-        $posts = [
-            [ 'title' => 'Article 1', 'summary' => 'Mon super article 1'],
-            [ 'title' => 'Article 2', 'summary' => 'Mon super article 2'],
-        ];
+        $model = new Post();
+        $posts = $model->all(['limit' => 3]);
 
         return $this->getView('homepage.html', compact('posts'));
     }

@@ -7,7 +7,7 @@
     <h3>Derniers Articles</h3>
     {% for post in posts %}
         <article>
-            <h4>{{ post.title }}</h4>
+            <h4><a href="/article/{{ post.slug }}">{{ post.title }}</a></h4>
             <p>{{ post.summary }}</p>
         </article>
     {% endfor %}
