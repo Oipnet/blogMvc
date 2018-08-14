@@ -1,0 +1,15 @@
+{% extends 'layout/base.html.twig' %}
+
+{% block content %}
+    <h1>Bienvenue sur mon blog</h1>
+    <h2>Ceci est un exercice de démo</h2>
+    <hr>
+    <h3>Derniers Articles</h3>
+    {% for post in posts %}
+        <article>
+            <h4>{{ post.title }}</h4>
+            <p>{{ post.summary }}</p>
+        </article>
+    {% endfor %}
+    <hr>
+{% endblock %}

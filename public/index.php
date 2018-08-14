@@ -1,18 +1,19 @@
 <?php
 require '../vendor/autoload.php';
 use \Core\Router;
+use \Core\Config;
 
 $router = new Router();
-$url = $_SERVER['REQUEST_URI'];
+
+require Config::ROUTER_PATH.'/web.php';
 
 try {
-    $dispatcher = $router->dispatch($url);
-
-    $controller = '\\App\\'.$dispatcher['controller'];
-    $controller = new $controller();
-    
-    $function = $dispatcher['action'];
-    echo $controller->$function();
+    ob_start();
+    echo $router->dispatch();
+    ob_end_flush();
 } catch (\Exception $e) {
+    if (Config::ENV == 'dev') {
+        echo $e->getMessage().'<br>';
+    }
     echo 'Erreur';
 }
