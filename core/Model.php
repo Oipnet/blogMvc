@@ -12,17 +12,9 @@ use PDO;
 
 abstract class Model
 {
-    public function __construct()
+    public function __construct(Container $container)
     {
-        $opt = [
-            PDO::ATTR_PERSISTENT => true,
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ
-        ];
-        $dns = "mysql:host=" . Config::DB_HOST . ";dbname=" . Config::DB_NAME . ";charset=utf8";
-
-        $this->db = new PDO($dns,
-            Config::DB_USER, Config::DB_PASSWORD, $opt);
+        $this->db = $container->getConnection()->getDb();
 
         $this->table = explode('\\', get_class($this));
         $this->table = array_pop($this->table);

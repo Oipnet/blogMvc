@@ -1,9 +1,12 @@
 <?php
 require '../vendor/autoload.php';
+
+use Core\Container;
 use \Core\Router;
 use \Core\Config;
 
-$router = new Router();
+$container = new Container();
+$router = new Router($container);
 
 require Config::ROUTER_PATH.'/web.php';
 

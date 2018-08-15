@@ -5,9 +5,14 @@ use Core\Exception\RouteNotFoundException;
 
 class Router {
     private $routes;
+    /**
+     * @var Container
+     */
+    private $container;
 
-    public function __construct() 
+    public function __construct(Container $container)
     {
+        $this->container = $container;
     }
 
     public function dispatch() 
@@ -32,7 +37,7 @@ class Router {
             throw new RouteNotFoundException('Le controller demandé n\'existe pas');
         }
 
-        $controllerClass = new $controllerClass();
+        $controllerClass = new $controllerClass($this->container);
         if (! method_exists($controllerClass, $route['action'])) {
             throw new RouteNotFoundException('La methode demandée n\'existe pas');
         }
