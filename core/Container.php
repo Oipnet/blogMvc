@@ -3,6 +3,7 @@ namespace Core;
 
 class Container {
     private $connection = null;
+    private $session = null;
     
     public function getConnection()
     {
@@ -21,5 +22,14 @@ class Container {
         ]);
 
         return $twig;
+    }
+
+    public function getSession()
+    {
+        if ($this->session) {
+            return $this->session;
+        }
+
+        return new Session();
     }
 }

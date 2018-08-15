@@ -15,9 +15,9 @@ class Router {
         $this->container = $container;
     }
 
-    public function dispatch() 
+    public function dispatch(Request $request)
     {
-        $url = ltrim($_SERVER['REQUEST_URI'], '/');
+        $url = $request->getUri();
         $url = explode('/', $url);
         $method = $_SERVER['REQUEST_METHOD'];
 
@@ -43,6 +43,8 @@ class Router {
         }
 
         array_shift($url);
+        array_unshift($url, $request);
+
         return call_user_func_array([$controllerClass, $route['action']], $url);
     }
 
