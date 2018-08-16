@@ -8,14 +8,7 @@ use Core\Config;
 
 $request = new Request();
 
-$container = new Container();
-$router = new Router($container);
-
-$session = $container->getSession();
-var_dump($session);
-var_dump($session->get('test'));
-var_dump($_SESSION);
-die();
+$router = new Router();
 
 require Config::ROUTER_PATH.'/web.php';
 

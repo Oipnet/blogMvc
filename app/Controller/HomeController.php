@@ -1,11 +1,19 @@
 <?php
 namespace App\Controller;
 
+use App\Middleware\AuthMiddleware;
 use App\Model\Post;
+use Core\Container;
+use Core\Controller;
 use Core\Request;
 
-class HomeController extends \Core\Controller {
+class HomeController extends Controller {
 
+    public function __construct() {
+        $this->middlewares[] = AuthMiddleware::class;
+
+        parent::__construct();
+    }
     /**
      * @return string
      *

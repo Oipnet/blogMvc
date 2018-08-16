@@ -8,14 +8,21 @@ abstract class Controller {
      */
     private $container;
 
+    protected $middlewares = [];
+
     /**
      * Controller constructor.
      *
      * @param Container $container Dependency injection container
      */
-    public function __construct(Container $container)
+    public function __construct()
     {
-        $this->container = $container;
+        $this->container = new Container();
+
+        foreach ($this->middlewares as $middleware) {
+            (new $middleware($this->container))();
+        }
+        
     }
 
     /**

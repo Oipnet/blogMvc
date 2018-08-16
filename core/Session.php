@@ -20,7 +20,7 @@ class Session
     {
         session_start();
 
-        $this->attributes = array_map(function ($elt) { return htmlentities($elt);}, $_SESSION);
+        $this->attributes = array_map(function ($elt) { return (is_string($elt))?htmlentities($elt):$elt;}, $_SESSION);
     }
 
     public function get($name)
@@ -29,7 +29,7 @@ class Session
     }
 
     public function set($name, $value) {
-        $this->attributes[$name] = htmlentities($value);
+        $this->attributes[$name] = (is_string($value))?htmlentities($value):$value;
         $_SESSION[$name] = $value;
 
         return $this;
@@ -40,5 +40,9 @@ class Session
         unset($_SESSION[$name]);
 
         return $this;
+    }
+
+    public function isAuth() {
+        return $this->get('auth');
     }
 }

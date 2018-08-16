@@ -24,12 +24,12 @@ class Container {
         return $twig;
     }
 
-    public function getSession()
+    public function getSession(): Session
     {
-        if ($this->session) {
-            return $this->session;
+        if (! $this->session) {
+            $this->session = new Session();
         }
 
-        return new Session();
+        return $this->session;
     }
 }
