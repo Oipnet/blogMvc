@@ -1,7 +1,6 @@
 <?php
 require '../vendor/autoload.php';
 
-use Core\Container;
 use Core\Request;
 use Core\Router;
 use Core\Config;

@@ -8,11 +8,6 @@
 
 namespace Core;
 
-
-use Psr\Http\Message\RequestInterface;
-use Psr\Http\Message\StreamInterface;
-use Psr\Http\Message\UriInterface;
-
 class Request
 {
     private $protocol;
