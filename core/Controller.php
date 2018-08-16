@@ -8,6 +8,9 @@ abstract class Controller {
      */
     private $container;
 
+    /**
+     * @var array
+     */
     protected $middlewares = [];
 
     /**
@@ -43,6 +46,8 @@ abstract class Controller {
     }
 
     /**
+     * Get the DI container
+     *
      * @return Container
      */
     public function getContainer()

@@ -21,7 +21,13 @@ abstract class Model
         $this->table .= 's';
     }
 
-    public function all($opt = [])
+    /**
+     * Fetch all table's record
+     *
+     * @param array $opt
+     * @return array
+     */
+    public function all($opt = []): array
     {
         $sql = 'SELECT * FROM '.$this->table.' ORDER BY created_at DESC';
         if (isset($opt['limit'])) {
@@ -34,7 +40,13 @@ abstract class Model
         return $stmt->fetchAll();
     }
 
-    public function findBy($opt = [])
+    /**
+     * Fecth first result
+     *
+     * @param array $opt
+     * @return \stdClass
+     */
+    public function findOneBy($opt = []): \stdClass
     {
         $sql = 'SELECT * FROM '.$this->table;
         $sql .= ' WHERE '.array_keys($opt)[0].' = :'.array_keys($opt)[0];

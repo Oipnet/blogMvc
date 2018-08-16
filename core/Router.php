@@ -14,7 +14,7 @@ class Router {
     {
         $url = $request->getUri();
         $url = explode('/', $url);
-        $method = $_SERVER['REQUEST_METHOD'];
+        $method = $request->getMethod();
 
         $page = $url[0];
         if (! strlen($page)) {

@@ -10,6 +10,7 @@ namespace App\Middleware;
 
 
 use Core\Container;
+use Core\Exception\NotAllowedException;
 
 class AuthMiddleware
 {
@@ -23,10 +24,13 @@ class AuthMiddleware
         $this->container = $container;
     }
 
+    /**
+     * @throws NotAllowedException
+     */
     public function __invoke()
     {
-        if (!$this->container->getSession()->isAuth()) {
-            throw new \Exception('Failled auth');
+        if (!$this->container->getSession()->getAuth()) {
+            throw new NotAllowedException('You can\'t acces here');
         }
     }
 }

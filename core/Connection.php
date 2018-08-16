@@ -25,9 +25,11 @@ class Connection extends PDO {
     }
 
     /**
+     * Get a PDO instance
+     *
      * @return PDO
      */
-    public function getDb()
+    public function getDb(): PDO
     {
         return $this->db;
     }

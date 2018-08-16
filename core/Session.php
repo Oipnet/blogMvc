@@ -28,21 +28,24 @@ class Session
         return $this->attributes[$name] ?? null;
     }
 
-    public function set($name, $value) {
+    public function set($name, $value): self
+    {
         $this->attributes[$name] = (is_string($value))?htmlentities($value):$value;
         $_SESSION[$name] = $value;
 
         return $this;
     }
 
-    public function remove($name) {
+    public function remove($name): self
+    {
         unset($this->attributes[$name]);
         unset($_SESSION[$name]);
 
         return $this;
     }
 
-    public function isAuth() {
+    public function getAuth()
+    {
         return $this->get('auth');
     }
 }

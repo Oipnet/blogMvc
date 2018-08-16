@@ -19,6 +19,7 @@ class Request
     private $headers;
     private $parameters = [];
     private $uri;
+    private $method;
 
     public function __construct()
     {
@@ -29,6 +30,7 @@ class Request
         $this->parameters['GET'] = $_GET;
         $this->parameters['POST'] = $_POST;
         $this->uri = isset($_SERVER['PATH_INFO'])?ltrim($_SERVER['PATH_INFO'], '/'):'';
+        $this->method = $_SERVER['REQUEST_METHOD'];
     }
 
     /**
@@ -233,6 +235,11 @@ class Request
     public function getUri()
     {
         return $this->uri;
+    }
+
+    public function getMethod()
+    {
+        return $this->method;
     }
 
 
