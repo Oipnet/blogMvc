@@ -1,0 +1,1588 @@
+# Logfile created on 2018-08-16 16:16:39 +0200 by logger.rb/61378
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-08-16 16:16:39 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [4e351b88] Running /usr/bin/env mkdir -p /tmp as deploy@oipnet.info
+ DEBUG [4e351b88] Command: /usr/bin/env mkdir -p /tmp
+  INFO [9deac6a5] Running /usr/bin/env #<StringIO:0x00005637dd964dd8> /tmp/git-ssh-BlogMVC-production-arnaud.sh as deploy@oipnet.info
+ DEBUG [9deac6a5] Command: /usr/bin/env #<StringIO:0x00005637dd964dd8> /tmp/git-ssh-BlogMVC-production-arnaud.sh
+  INFO [3d09ceb3] Running /usr/bin/env chmod 700 /tmp/git-ssh-BlogMVC-production-arnaud.sh as deploy@oipnet.info
+ DEBUG [3d09ceb3] Command: /usr/bin/env chmod 700 /tmp/git-ssh-BlogMVC-production-arnaud.sh
+  INFO [f279a194] Running /usr/bin/env git ls-remote git@github.com:Oipnet/blogMvc.git HEAD as deploy@oipnet.info
+ DEBUG [f279a194] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git ls-remote git@github.com:Oipnet/blogMvc.git HEAD )
+  INFO [42434646] Running /usr/bin/env mkdir -p /var/www/BlogMVC/shared /var/www/BlogMVC/releases as deploy@oipnet.info
+ DEBUG [42434646] Command: /usr/bin/env mkdir -p /var/www/BlogMVC/shared /var/www/BlogMVC/releases
+ DEBUG [5151d88f] Running [ -f /var/www/BlogMVC/current/REVISION ] as deploy@oipnet.info
+ DEBUG [5151d88f] Command: [ -f /var/www/BlogMVC/current/REVISION ]
+ DEBUG [6a523758] Running /usr/bin/env cat /var/www/BlogMVC/current/REVISION 2>/dev/null as deploy@oipnet.info
+ DEBUG [6a523758] Command: /usr/bin/env cat /var/www/BlogMVC/current/REVISION 2>/dev/null
+ DEBUG [74aec0d7] Running [ -f /var/www/BlogMVC/repo/HEAD ] as deploy@oipnet.info
+ DEBUG [74aec0d7] Command: [ -f /var/www/BlogMVC/repo/HEAD ]
+  INFO The repository mirror is at /var/www/BlogMVC/repo
+ DEBUG [8ea4db69] Running if test ! -d /var/www/BlogMVC/repo; then echo "Directory does not exist '/var/www/BlogMVC/repo'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [8ea4db69] Command: if test ! -d /var/www/BlogMVC/repo; then echo "Directory does not exist '/var/www/BlogMVC/repo'" 1>&2; false; fi
+  INFO [9dac9af8] Running /usr/bin/env git remote set-url origin git@github.com:Oipnet/blogMvc.git as deploy@oipnet.info
+ DEBUG [9dac9af8] Command: cd /var/www/BlogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git remote set-url origin git@github.com:Oipnet/blogMvc.git )
+  INFO [94e15382] Running /usr/bin/env git remote update --prune as deploy@oipnet.info
+ DEBUG [94e15382] Command: cd /var/www/BlogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [4659c771] Running if test ! -d /var/www/BlogMVC/repo; then echo "Directory does not exist '/var/www/BlogMVC/repo'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [4659c771] Command: if test ! -d /var/www/BlogMVC/repo; then echo "Directory does not exist '/var/www/BlogMVC/repo'" 1>&2; false; fi
+  INFO [e624de3c] Running /usr/bin/env mkdir -p /var/www/BlogMVC/releases/20180816141639 as deploy@oipnet.info
+ DEBUG [e624de3c] Command: cd /var/www/BlogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env mkdir -p /var/www/BlogMVC/releases/20180816141639 )
+  INFO [5c4a1dbb] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/BlogMVC/releases/20180816141639 as deploy@oipnet.info
+ DEBUG [5c4a1dbb] Command: cd /var/www/BlogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/BlogMVC/releases/20180816141639 )
+ DEBUG [3db4ce3a] Running if test ! -d /var/www/BlogMVC/repo; then echo "Directory does not exist '/var/www/BlogMVC/repo'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [3db4ce3a] Command: if test ! -d /var/www/BlogMVC/repo; then echo "Directory does not exist '/var/www/BlogMVC/repo'" 1>&2; false; fi
+ DEBUG [e3232390] Running /usr/bin/env git rev-list --max-count=1 master as deploy@oipnet.info
+ DEBUG [e3232390] Command: cd /var/www/BlogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [b7d52c8f] Running if test ! -d /var/www/BlogMVC/releases/20180816141639; then echo "Directory does not exist '/var/www/BlogMVC/releases/20180816141639'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [b7d52c8f] Command: if test ! -d /var/www/BlogMVC/releases/20180816141639; then echo "Directory does not exist '/var/www/BlogMVC/releases/20180816141639'" 1>&2; false; fi
+  INFO [bdf50047] Running /usr/bin/env echo "" > REVISION as deploy@oipnet.info
+ DEBUG [bdf50047] Command: cd /var/www/BlogMVC/releases/20180816141639 && /usr/bin/env echo "" > REVISION
+  INFO [bb085657] Running /usr/bin/env ln -s /var/www/BlogMVC/releases/20180816141639 /var/www/BlogMVC/releases/current as deploy@oipnet.info
+ DEBUG [bb085657] Command: /usr/bin/env ln -s /var/www/BlogMVC/releases/20180816141639 /var/www/BlogMVC/releases/current
+  INFO [82585095] Running /usr/bin/env mv /var/www/BlogMVC/releases/current /var/www/BlogMVC as deploy@oipnet.info
+ DEBUG [82585095] Command: /usr/bin/env mv /var/www/BlogMVC/releases/current /var/www/BlogMVC
+ DEBUG [6e96d981] Running /usr/bin/env ls -x /var/www/BlogMVC/releases as deploy@oipnet.info
+ DEBUG [6e96d981] Command: /usr/bin/env ls -x /var/www/BlogMVC/releases
+ DEBUG [fe834c10] Running if test ! -d /var/www/BlogMVC/releases; then echo "Directory does not exist '/var/www/BlogMVC/releases'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [fe834c10] Command: if test ! -d /var/www/BlogMVC/releases; then echo "Directory does not exist '/var/www/BlogMVC/releases'" 1>&2; false; fi
+  INFO [9eeb505d] Running /usr/bin/env echo "Branch master (at ) deployed as release 20180816141639 by arnaud" >> /var/www/BlogMVC/revisions.log as deploy@oipnet.info
+ DEBUG [9eeb505d] Command: cd /var/www/BlogMVC/releases && /usr/bin/env echo "Branch master (at ) deployed as release 20180816141639 by arnaud" >> /var/www/BlogMVC/revisions.log
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-08-16 16:16:51 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [575e3395] Running /usr/bin/env mkdir -p /tmp as deploy@oipnet.info
+ DEBUG [575e3395] Command: /usr/bin/env mkdir -p /tmp
+  INFO [d1f81182] Finished in 0.948 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-BlogMVC-production-arnaud.sh 0.0%
+  INFO Uploading /tmp/git-ssh-BlogMVC-production-arnaud.sh 100.0%
+  INFO [9ad1fdbb] Running /usr/bin/env chmod 700 /tmp/git-ssh-BlogMVC-production-arnaud.sh as deploy@oipnet.info
+ DEBUG [9ad1fdbb] Command: /usr/bin/env chmod 700 /tmp/git-ssh-BlogMVC-production-arnaud.sh
+  INFO [727df029] Finished in 0.161 seconds with exit status 0 (successful).
+  INFO [070a9352] Running /usr/bin/env git ls-remote git@github.com:Oipnet/blogMvc.git HEAD as deploy@oipnet.info
+ DEBUG [070a9352] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git ls-remote git@github.com:Oipnet/blogMvc.git HEAD )
+ DEBUG [241d5539] 	Warning: Permanently added 'github.com,192.30.253.112' (RSA) to the list of known hosts.
+ DEBUG [241d5539] 	bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843	HEAD
+  INFO [241d5539] Finished in 1.412 seconds with exit status 0 (successful).
+  INFO [16648c6e] Running /usr/bin/env mkdir -p /var/www/BlogMVC/shared /var/www/BlogMVC/releases as deploy@oipnet.info
+ DEBUG [16648c6e] Command: /usr/bin/env mkdir -p /var/www/BlogMVC/shared /var/www/BlogMVC/releases
+ DEBUG [93f318e9] 	mkdir: 
+ DEBUG [93f318e9] 	cannot create directory ‘/var/www/BlogMVC’
+ DEBUG [93f318e9] 	: Permission denied
+ DEBUG [93f318e9] 	
+ DEBUG [93f318e9] 	mkdir: 
+ DEBUG [93f318e9] 	cannot create directory ‘/var/www/BlogMVC’
+ DEBUG [93f318e9] 	: Permission denied
+ DEBUG [93f318e9] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-08-16 16:17:51 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [40f86fc4] Running /usr/bin/env mkdir -p /tmp as deploy@oipnet.info
+ DEBUG [40f86fc4] Command: /usr/bin/env mkdir -p /tmp
+  INFO [5be82e35] Finished in 0.972 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-BlogMVC-production-arnaud.sh 0.0%
+  INFO Uploading /tmp/git-ssh-BlogMVC-production-arnaud.sh 100.0%
+  INFO [a96cdca9] Running /usr/bin/env chmod 700 /tmp/git-ssh-BlogMVC-production-arnaud.sh as deploy@oipnet.info
+ DEBUG [a96cdca9] Command: /usr/bin/env chmod 700 /tmp/git-ssh-BlogMVC-production-arnaud.sh
+  INFO [363e64d7] Finished in 0.165 seconds with exit status 0 (successful).
+  INFO [68f240e0] Running /usr/bin/env git ls-remote git@github.com:Oipnet/blogMvc.git HEAD as deploy@oipnet.info
+ DEBUG [68f240e0] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git ls-remote git@github.com:Oipnet/blogMvc.git HEAD )
+ DEBUG [811878cf] 	Warning: Permanently added the RSA host key for IP address '192.30.253.113' to the list of known hosts.
+ DEBUG [811878cf] 	bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843	HEAD
+  INFO [811878cf] Finished in 1.394 seconds with exit status 0 (successful).
+  INFO [f9c80061] Running /usr/bin/env mkdir -p /var/www/BlogMVC/shared /var/www/BlogMVC/releases as deploy@oipnet.info
+ DEBUG [f9c80061] Command: /usr/bin/env mkdir -p /var/www/BlogMVC/shared /var/www/BlogMVC/releases
+ DEBUG [700c295c] 	mkdir: 
+ DEBUG [700c295c] 	cannot create directory ‘/var/www/BlogMVC’
+ DEBUG [700c295c] 	: Permission denied
+ DEBUG [700c295c] 	
+ DEBUG [700c295c] 	mkdir: 
+ DEBUG [700c295c] 	cannot create directory ‘/var/www/BlogMVC’
+ DEBUG [700c295c] 	: Permission denied
+ DEBUG [700c295c] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-08-16 16:18:23 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [04b7b65e] Running /usr/bin/env mkdir -p /tmp as deploy@oipnet.info
+ DEBUG [04b7b65e] Command: /usr/bin/env mkdir -p /tmp
+  INFO [f45f3bab] Finished in 0.905 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-BlogMVC-production-arnaud.sh 0.0%
+  INFO Uploading /tmp/git-ssh-BlogMVC-production-arnaud.sh 100.0%
+  INFO [1fc3008f] Running /usr/bin/env chmod 700 /tmp/git-ssh-BlogMVC-production-arnaud.sh as deploy@oipnet.info
+ DEBUG [1fc3008f] Command: /usr/bin/env chmod 700 /tmp/git-ssh-BlogMVC-production-arnaud.sh
+  INFO [e4bd388b] Finished in 0.161 seconds with exit status 0 (successful).
+  INFO [1c64cc0d] Running /usr/bin/env git ls-remote git@github.com:Oipnet/blogMvc.git HEAD as deploy@oipnet.info
+ DEBUG [1c64cc0d] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git ls-remote git@github.com:Oipnet/blogMvc.git HEAD )
+ DEBUG [0682aa0e] 	bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843	HEAD
+  INFO [0682aa0e] Finished in 1.391 seconds with exit status 0 (successful).
+  INFO [139b05ae] Running /usr/bin/env mkdir -p /var/www/BlogMVC/shared /var/www/BlogMVC/releases as deploy@oipnet.info
+ DEBUG [139b05ae] Command: /usr/bin/env mkdir -p /var/www/BlogMVC/shared /var/www/BlogMVC/releases
+ DEBUG [00269c52] 	mkdir: 
+ DEBUG [00269c52] 	cannot create directory ‘/var/www/BlogMVC’
+ DEBUG [00269c52] 	: Permission denied
+ DEBUG [00269c52] 	
+ DEBUG [00269c52] 	mkdir: 
+ DEBUG [00269c52] 	cannot create directory ‘/var/www/BlogMVC’
+ DEBUG [00269c52] 	: Permission denied
+ DEBUG [00269c52] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-08-16 16:21:11 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [938d3922] Running /usr/bin/env mkdir -p /tmp as deploy@oipnet.info
+ DEBUG [938d3922] Command: /usr/bin/env mkdir -p /tmp
+  INFO [1779e2b6] Finished in 1.361 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-BlogMVC-production-arnaud.sh 0.0%
+  INFO Uploading /tmp/git-ssh-BlogMVC-production-arnaud.sh 100.0%
+  INFO [b73db86e] Running /usr/bin/env chmod 700 /tmp/git-ssh-BlogMVC-production-arnaud.sh as deploy@oipnet.info
+ DEBUG [b73db86e] Command: /usr/bin/env chmod 700 /tmp/git-ssh-BlogMVC-production-arnaud.sh
+  INFO [8a4022ba] Finished in 0.165 seconds with exit status 0 (successful).
+  INFO [37fc8601] Running /usr/bin/env git ls-remote git@github.com:Oipnet/blogMvc.git HEAD as deploy@oipnet.info
+ DEBUG [37fc8601] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git ls-remote git@github.com:Oipnet/blogMvc.git HEAD )
+ DEBUG [0c5795ce] 	bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843	HEAD
+  INFO [0c5795ce] Finished in 1.466 seconds with exit status 0 (successful).
+  INFO [585bd78b] Running /usr/bin/env mkdir -p /var/www/BlogMVC/shared /var/www/BlogMVC/releases as deploy@oipnet.info
+ DEBUG [585bd78b] Command: /usr/bin/env mkdir -p /var/www/BlogMVC/shared /var/www/BlogMVC/releases
+ DEBUG [87ca16cd] 	mkdir: 
+ DEBUG [87ca16cd] 	cannot create directory ‘/var/www/BlogMVC’
+ DEBUG [87ca16cd] 	: Permission denied
+ DEBUG [87ca16cd] 	
+ DEBUG [87ca16cd] 	mkdir: 
+ DEBUG [87ca16cd] 	cannot create directory ‘/var/www/BlogMVC’
+ DEBUG [87ca16cd] 	: Permission denied
+ DEBUG [87ca16cd] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-08-16 16:22:07 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [2f5e76c7] Running /usr/bin/env mkdir -p /tmp as deploy@oipnet.info
+ DEBUG [2f5e76c7] Command: /usr/bin/env mkdir -p /tmp
+  INFO [72d67e79] Finished in 0.988 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-BlogMVC-production-arnaud.sh 0.0%
+  INFO Uploading /tmp/git-ssh-BlogMVC-production-arnaud.sh 100.0%
+  INFO [f921abd4] Running /usr/bin/env chmod 700 /tmp/git-ssh-BlogMVC-production-arnaud.sh as deploy@oipnet.info
+ DEBUG [f921abd4] Command: /usr/bin/env chmod 700 /tmp/git-ssh-BlogMVC-production-arnaud.sh
+  INFO [45604f13] Finished in 0.160 seconds with exit status 0 (successful).
+  INFO [3dce568f] Running /usr/bin/env git ls-remote git@github.com:Oipnet/blogMvc.git HEAD as deploy@oipnet.info
+ DEBUG [3dce568f] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git ls-remote git@github.com:Oipnet/blogMvc.git HEAD )
+ DEBUG [6d1bfce6] 	bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843	HEAD
+  INFO [6d1bfce6] Finished in 1.618 seconds with exit status 0 (successful).
+  INFO [38445256] Running /usr/bin/env mkdir -p /var/www/blogMVC/shared /var/www/blogMVC/releases as deploy@oipnet.info
+ DEBUG [38445256] Command: /usr/bin/env mkdir -p /var/www/blogMVC/shared /var/www/blogMVC/releases
+  INFO [39b6b4b4] Finished in 0.120 seconds with exit status 0 (successful).
+ DEBUG [b3ea53aa] Running [ -f /var/www/blogMVC/current/REVISION ] as deploy@oipnet.info
+ DEBUG [b3ea53aa] Command: [ -f /var/www/blogMVC/current/REVISION ]
+ DEBUG [d758efd8] Finished in 0.163 seconds with exit status 1 (failed).
+ DEBUG [d3f74917] Running [ -f /var/www/blogMVC/repo/HEAD ] as deploy@oipnet.info
+ DEBUG [d3f74917] Command: [ -f /var/www/blogMVC/repo/HEAD ]
+ DEBUG [6284cdb0] Finished in 0.154 seconds with exit status 1 (failed).
+ DEBUG [faf2b143] Running if test ! -d /var/www/blogMVC; then echo "Directory does not exist '/var/www/blogMVC'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [faf2b143] Command: if test ! -d /var/www/blogMVC; then echo "Directory does not exist '/var/www/blogMVC'" 1>&2; false; fi
+ DEBUG [a105b6b5] Finished in 0.155 seconds with exit status 0 (successful).
+  INFO [30e6f04d] Running /usr/bin/env git clone --mirror git@github.com:Oipnet/blogMvc.git /var/www/blogMVC/repo as deploy@oipnet.info
+ DEBUG [30e6f04d] Command: cd /var/www/blogMVC && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git clone --mirror git@github.com:Oipnet/blogMvc.git /var/www/blogMVC/repo )
+ DEBUG [5fe1a9e0] 	Cloning into bare repository '/var/www/blogMVC/repo'...
+  INFO [5fe1a9e0] Finished in 1.778 seconds with exit status 0 (successful).
+ DEBUG [4e49855c] Running if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [4e49855c] Command: if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi
+ DEBUG [f430326a] Finished in 0.114 seconds with exit status 0 (successful).
+  INFO [7c9c126e] Running /usr/bin/env git remote set-url origin git@github.com:Oipnet/blogMvc.git as deploy@oipnet.info
+ DEBUG [7c9c126e] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git remote set-url origin git@github.com:Oipnet/blogMvc.git )
+  INFO [c86fdd7a] Finished in 0.163 seconds with exit status 0 (successful).
+  INFO [382f0129] Running /usr/bin/env git remote update --prune as deploy@oipnet.info
+ DEBUG [382f0129] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [181f66d9] 	Fetching origin
+  INFO [181f66d9] Finished in 1.473 seconds with exit status 0 (successful).
+ DEBUG [14826651] Running if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [14826651] Command: if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi
+ DEBUG [af6da37f] Finished in 0.116 seconds with exit status 0 (successful).
+  INFO [eae50671] Running /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816142211 as deploy@oipnet.info
+ DEBUG [eae50671] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816142211 )
+  INFO [57c57178] Finished in 0.159 seconds with exit status 0 (successful).
+  INFO [009b1672] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/blogMVC/releases/20180816142211 as deploy@oipnet.info
+ DEBUG [009b1672] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/blogMVC/releases/20180816142211 )
+  INFO [01e9a7c5] Finished in 0.176 seconds with exit status 0 (successful).
+ DEBUG [f2e6cb4f] Running if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [f2e6cb4f] Command: if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi
+ DEBUG [9ce99541] Finished in 0.155 seconds with exit status 0 (successful).
+ DEBUG [cbb6bb7f] Running /usr/bin/env git rev-list --max-count=1 master as deploy@oipnet.info
+ DEBUG [cbb6bb7f] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [7a8ceed1] 	bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843
+ DEBUG [7a8ceed1] Finished in 0.162 seconds with exit status 0 (successful).
+ DEBUG [e65d9b0f] Running if test ! -d /var/www/blogMVC/releases/20180816142211; then echo "Directory does not exist '/var/www/blogMVC/releases/20180816142211'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [e65d9b0f] Command: if test ! -d /var/www/blogMVC/releases/20180816142211; then echo "Directory does not exist '/var/www/blogMVC/releases/20180816142211'" 1>&2; false; fi
+ DEBUG [2bbedb33] Finished in 0.159 seconds with exit status 0 (successful).
+  INFO [378e8de1] Running /usr/bin/env echo "bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843" > REVISION as deploy@oipnet.info
+ DEBUG [378e8de1] Command: cd /var/www/blogMVC/releases/20180816142211 && /usr/bin/env echo "bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843" > REVISION
+  INFO [6b632054] Finished in 0.165 seconds with exit status 0 (successful).
+  INFO [3f777cbf] Running /usr/bin/env ln -s /var/www/blogMVC/releases/20180816142211 /var/www/blogMVC/releases/current as deploy@oipnet.info
+ DEBUG [3f777cbf] Command: /usr/bin/env ln -s /var/www/blogMVC/releases/20180816142211 /var/www/blogMVC/releases/current
+  INFO [b923f42c] Finished in 0.162 seconds with exit status 0 (successful).
+  INFO [9dc8403a] Running /usr/bin/env mv /var/www/blogMVC/releases/current /var/www/blogMVC as deploy@oipnet.info
+ DEBUG [9dc8403a] Command: /usr/bin/env mv /var/www/blogMVC/releases/current /var/www/blogMVC
+  INFO [0a12dd13] Finished in 0.156 seconds with exit status 0 (successful).
+ DEBUG [807d095d] Running /usr/bin/env ls -x /var/www/blogMVC/releases as deploy@oipnet.info
+ DEBUG [807d095d] Command: /usr/bin/env ls -x /var/www/blogMVC/releases
+ DEBUG [81881d9c] 	20180816142211
+ DEBUG [81881d9c] Finished in 0.159 seconds with exit status 0 (successful).
+ DEBUG [81cbeb50] Running if test ! -d /var/www/blogMVC/releases; then echo "Directory does not exist '/var/www/blogMVC/releases'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [81cbeb50] Command: if test ! -d /var/www/blogMVC/releases; then echo "Directory does not exist '/var/www/blogMVC/releases'" 1>&2; false; fi
+ DEBUG [a7b47e29] Finished in 0.157 seconds with exit status 0 (successful).
+  INFO [1ddf91c5] Running /usr/bin/env echo "Branch master (at bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843) deployed as release 20180816142211 by arnaud" >> /var/www/blogMVC/revisions.log as deploy@oipnet.info
+ DEBUG [1ddf91c5] Command: cd /var/www/blogMVC/releases && /usr/bin/env echo "Branch master (at bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843) deployed as release 20180816142211 by arnaud" >> /var/www/blogMVC/revisions.log
+  INFO [bef2e769] Finished in 0.170 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-08-16 16:23:47 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [6c2ce713] Running /usr/bin/env mkdir -p /tmp as deploy@oipnet.info
+ DEBUG [6c2ce713] Command: /usr/bin/env mkdir -p /tmp
+  INFO [6c8ae91b] Finished in 0.906 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-BlogMVC-production-arnaud.sh 0.0%
+  INFO Uploading /tmp/git-ssh-BlogMVC-production-arnaud.sh 100.0%
+  INFO [73bab3ac] Running /usr/bin/env chmod 700 /tmp/git-ssh-BlogMVC-production-arnaud.sh as deploy@oipnet.info
+ DEBUG [73bab3ac] Command: /usr/bin/env chmod 700 /tmp/git-ssh-BlogMVC-production-arnaud.sh
+  INFO [298dea95] Finished in 0.166 seconds with exit status 0 (successful).
+  INFO [ab513bc8] Running /usr/bin/env git ls-remote git@github.com:Oipnet/blogMvc.git HEAD as deploy@oipnet.info
+ DEBUG [ab513bc8] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git ls-remote git@github.com:Oipnet/blogMvc.git HEAD )
+ DEBUG [e074483a] 	bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843	HEAD
+  INFO [e074483a] Finished in 1.408 seconds with exit status 0 (successful).
+  INFO [1f3e4311] Running /usr/bin/env mkdir -p /var/www/blogMVC/shared /var/www/blogMVC/releases as deploy@oipnet.info
+ DEBUG [1f3e4311] Command: /usr/bin/env mkdir -p /var/www/blogMVC/shared /var/www/blogMVC/releases
+  INFO [b4f66783] Finished in 0.120 seconds with exit status 0 (successful).
+ DEBUG [89d2056a] Running [ -f /var/www/blogMVC/current/REVISION ] as deploy@oipnet.info
+ DEBUG [89d2056a] Command: [ -f /var/www/blogMVC/current/REVISION ]
+ DEBUG [7a59926c] Finished in 0.159 seconds with exit status 0 (successful).
+ DEBUG [c8650101] Running /usr/bin/env cat /var/www/blogMVC/current/REVISION 2>/dev/null as deploy@oipnet.info
+ DEBUG [c8650101] Command: /usr/bin/env cat /var/www/blogMVC/current/REVISION 2>/dev/null
+ DEBUG [fbd21f79] 	bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843
+ DEBUG [fbd21f79] Finished in 0.157 seconds with exit status 0 (successful).
+ DEBUG [9b3effd2] Running [ -f /var/www/blogMVC/repo/HEAD ] as deploy@oipnet.info
+ DEBUG [9b3effd2] Command: [ -f /var/www/blogMVC/repo/HEAD ]
+ DEBUG [10cd10eb] Finished in 0.155 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/blogMVC/repo
+ DEBUG [34e2c496] Running if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [34e2c496] Command: if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi
+ DEBUG [857c9e6e] Finished in 0.161 seconds with exit status 0 (successful).
+  INFO [95e5bb25] Running /usr/bin/env git remote set-url origin git@github.com:Oipnet/blogMvc.git as deploy@oipnet.info
+ DEBUG [95e5bb25] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git remote set-url origin git@github.com:Oipnet/blogMvc.git )
+  INFO [15b0394d] Finished in 0.167 seconds with exit status 0 (successful).
+  INFO [25bdedd7] Running /usr/bin/env git remote update --prune as deploy@oipnet.info
+ DEBUG [25bdedd7] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [70b4d85c] 	Fetching origin
+  INFO [70b4d85c] Finished in 1.396 seconds with exit status 0 (successful).
+ DEBUG [89b88e04] Running if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [89b88e04] Command: if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi
+ DEBUG [70f02399] Finished in 0.112 seconds with exit status 0 (successful).
+  INFO [8f930c44] Running /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816142350 as deploy@oipnet.info
+ DEBUG [8f930c44] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816142350 )
+  INFO [1fa21945] Finished in 0.167 seconds with exit status 0 (successful).
+  INFO [e4e8674a] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/blogMVC/releases/20180816142350 as deploy@oipnet.info
+ DEBUG [e4e8674a] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/blogMVC/releases/20180816142350 )
+  INFO [d7110792] Finished in 0.182 seconds with exit status 0 (successful).
+ DEBUG [a0712c64] Running if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [a0712c64] Command: if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi
+ DEBUG [f768802c] Finished in 0.158 seconds with exit status 0 (successful).
+ DEBUG [d9de8e2f] Running /usr/bin/env git rev-list --max-count=1 master as deploy@oipnet.info
+ DEBUG [d9de8e2f] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [2e9ddce7] 	bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843
+ DEBUG [2e9ddce7] Finished in 0.162 seconds with exit status 0 (successful).
+ DEBUG [ed7d434f] Running if test ! -d /var/www/blogMVC/releases/20180816142350; then echo "Directory does not exist '/var/www/blogMVC/releases/20180816142350'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [ed7d434f] Command: if test ! -d /var/www/blogMVC/releases/20180816142350; then echo "Directory does not exist '/var/www/blogMVC/releases/20180816142350'" 1>&2; false; fi
+ DEBUG [291b006d] Finished in 0.157 seconds with exit status 0 (successful).
+  INFO [45893fde] Running /usr/bin/env echo "bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843" > REVISION as deploy@oipnet.info
+ DEBUG [45893fde] Command: cd /var/www/blogMVC/releases/20180816142350 && /usr/bin/env echo "bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843" > REVISION
+  INFO [5e438f71] Finished in 0.169 seconds with exit status 0 (successful).
+  INFO [3f3ed47f] Running /usr/bin/env ln -s /var/www/blogMVC/releases/20180816142350 /var/www/blogMVC/releases/current as deploy@oipnet.info
+ DEBUG [3f3ed47f] Command: /usr/bin/env ln -s /var/www/blogMVC/releases/20180816142350 /var/www/blogMVC/releases/current
+  INFO [246cc129] Finished in 0.155 seconds with exit status 0 (successful).
+  INFO [efd15871] Running /usr/bin/env mv /var/www/blogMVC/releases/current /var/www/blogMVC as deploy@oipnet.info
+ DEBUG [efd15871] Command: /usr/bin/env mv /var/www/blogMVC/releases/current /var/www/blogMVC
+  INFO [acf3ab7e] Finished in 0.157 seconds with exit status 0 (successful).
+ DEBUG [4ff10fcf] Running /usr/bin/env ls -x /var/www/blogMVC/releases as deploy@oipnet.info
+ DEBUG [4ff10fcf] Command: /usr/bin/env ls -x /var/www/blogMVC/releases
+ DEBUG [e7e4fc71] 	20180816142211	20180816142350
+ DEBUG [e7e4fc71] Finished in 0.159 seconds with exit status 0 (successful).
+ DEBUG [563fb979] Running if test ! -d /var/www/blogMVC/releases; then echo "Directory does not exist '/var/www/blogMVC/releases'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [563fb979] Command: if test ! -d /var/www/blogMVC/releases; then echo "Directory does not exist '/var/www/blogMVC/releases'" 1>&2; false; fi
+ DEBUG [944a5e26] Finished in 0.158 seconds with exit status 0 (successful).
+  INFO [c86df057] Running /usr/bin/env echo "Branch master (at bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843) deployed as release 20180816142350 by arnaud" >> /var/www/blogMVC/revisions.log as deploy@oipnet.info
+ DEBUG [c86df057] Command: cd /var/www/blogMVC/releases && /usr/bin/env echo "Branch master (at bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843) deployed as release 20180816142350 by arnaud" >> /var/www/blogMVC/revisions.log
+  INFO [00c818b8] Finished in 0.161 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-08-16 16:29:34 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [1ca777ea] Running /usr/bin/env mkdir -p /tmp as deploy@oipnet.info
+ DEBUG [1ca777ea] Command: /usr/bin/env mkdir -p /tmp
+  INFO [28fdfb6c] Finished in 0.975 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-BlogMVC-production-arnaud.sh 0.0%
+  INFO Uploading /tmp/git-ssh-BlogMVC-production-arnaud.sh 100.0%
+  INFO [d178387c] Running /usr/bin/env chmod 700 /tmp/git-ssh-BlogMVC-production-arnaud.sh as deploy@oipnet.info
+ DEBUG [d178387c] Command: /usr/bin/env chmod 700 /tmp/git-ssh-BlogMVC-production-arnaud.sh
+  INFO [be1f4473] Finished in 0.160 seconds with exit status 0 (successful).
+  INFO [27dcc1ab] Running /usr/bin/env git ls-remote git@github.com:Oipnet/blogMvc.git HEAD as deploy@oipnet.info
+ DEBUG [27dcc1ab] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git ls-remote git@github.com:Oipnet/blogMvc.git HEAD )
+ DEBUG [4e96f0ac] 	bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843	HEAD
+  INFO [4e96f0ac] Finished in 1.375 seconds with exit status 0 (successful).
+  INFO [a0d2df6c] Running /usr/bin/env mkdir -p /var/www/blogMVC/shared /var/www/blogMVC/releases as deploy@oipnet.info
+ DEBUG [a0d2df6c] Command: /usr/bin/env mkdir -p /var/www/blogMVC/shared /var/www/blogMVC/releases
+  INFO [51de35bb] Finished in 0.120 seconds with exit status 0 (successful).
+  INFO [a31b9068] Running /usr/bin/env mkdir -p /var/www/blogMVC/shared/var/cache as deploy@oipnet.info
+ DEBUG [a31b9068] Command: /usr/bin/env mkdir -p /var/www/blogMVC/shared/var/cache
+  INFO [a2adf9c0] Finished in 0.157 seconds with exit status 0 (successful).
+ DEBUG [8c720e13] Running [ -f /var/www/blogMVC/current/REVISION ] as deploy@oipnet.info
+ DEBUG [8c720e13] Command: [ -f /var/www/blogMVC/current/REVISION ]
+ DEBUG [09b4dea3] Finished in 0.155 seconds with exit status 0 (successful).
+ DEBUG [621d276c] Running /usr/bin/env cat /var/www/blogMVC/current/REVISION 2>/dev/null as deploy@oipnet.info
+ DEBUG [621d276c] Command: /usr/bin/env cat /var/www/blogMVC/current/REVISION 2>/dev/null
+ DEBUG [b05e84d3] 	bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843
+ DEBUG [b05e84d3] Finished in 0.160 seconds with exit status 0 (successful).
+ DEBUG [41a09d12] Running [ -f /var/www/blogMVC/repo/HEAD ] as deploy@oipnet.info
+ DEBUG [41a09d12] Command: [ -f /var/www/blogMVC/repo/HEAD ]
+ DEBUG [e9e73c00] Finished in 0.156 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/blogMVC/repo
+ DEBUG [ba819803] Running if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [ba819803] Command: if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi
+ DEBUG [a6007117] Finished in 0.158 seconds with exit status 0 (successful).
+  INFO [828162a3] Running /usr/bin/env git remote set-url origin git@github.com:Oipnet/blogMvc.git as deploy@oipnet.info
+ DEBUG [828162a3] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git remote set-url origin git@github.com:Oipnet/blogMvc.git )
+  INFO [d5f6b987] Finished in 0.165 seconds with exit status 0 (successful).
+  INFO [580eec75] Running /usr/bin/env git remote update --prune as deploy@oipnet.info
+ DEBUG [580eec75] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [5f648a66] 	Fetching origin
+  INFO [5f648a66] Finished in 1.422 seconds with exit status 0 (successful).
+ DEBUG [23d40015] Running if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [23d40015] Command: if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi
+ DEBUG [df5284e8] Finished in 0.112 seconds with exit status 0 (successful).
+  INFO [5195f7ac] Running /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816142938 as deploy@oipnet.info
+ DEBUG [5195f7ac] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816142938 )
+  INFO [b5cc7180] Finished in 0.166 seconds with exit status 0 (successful).
+  INFO [2454e567] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/blogMVC/releases/20180816142938 as deploy@oipnet.info
+ DEBUG [2454e567] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/blogMVC/releases/20180816142938 )
+  INFO [c86460aa] Finished in 0.175 seconds with exit status 0 (successful).
+ DEBUG [d5994c08] Running if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [d5994c08] Command: if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi
+ DEBUG [21c3c90f] Finished in 0.158 seconds with exit status 0 (successful).
+ DEBUG [3fecac98] Running /usr/bin/env git rev-list --max-count=1 master as deploy@oipnet.info
+ DEBUG [3fecac98] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [71196c1d] 	bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843
+ DEBUG [71196c1d] Finished in 0.159 seconds with exit status 0 (successful).
+ DEBUG [fdb08c8e] Running if test ! -d /var/www/blogMVC/releases/20180816142938; then echo "Directory does not exist '/var/www/blogMVC/releases/20180816142938'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [fdb08c8e] Command: if test ! -d /var/www/blogMVC/releases/20180816142938; then echo "Directory does not exist '/var/www/blogMVC/releases/20180816142938'" 1>&2; false; fi
+ DEBUG [e7bac8ec] Finished in 0.159 seconds with exit status 0 (successful).
+  INFO [656e4cf3] Running /usr/bin/env echo "bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843" > REVISION as deploy@oipnet.info
+ DEBUG [656e4cf3] Command: cd /var/www/blogMVC/releases/20180816142938 && /usr/bin/env echo "bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843" > REVISION
+  INFO [0b9f21d7] Finished in 0.157 seconds with exit status 0 (successful).
+  INFO [34225dfc] Running /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816142938/var as deploy@oipnet.info
+ DEBUG [34225dfc] Command: /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816142938/var
+  INFO [369d5a40] Finished in 0.162 seconds with exit status 0 (successful).
+ DEBUG [9bfcf20b] Running [ -L /var/www/blogMVC/releases/20180816142938/var/cache ] as deploy@oipnet.info
+ DEBUG [9bfcf20b] Command: [ -L /var/www/blogMVC/releases/20180816142938/var/cache ]
+ DEBUG [c3cf42b6] Finished in 0.159 seconds with exit status 1 (failed).
+ DEBUG [c40ecacf] Running [ -d /var/www/blogMVC/releases/20180816142938/var/cache ] as deploy@oipnet.info
+ DEBUG [c40ecacf] Command: [ -d /var/www/blogMVC/releases/20180816142938/var/cache ]
+ DEBUG [c19b4c80] Finished in 0.157 seconds with exit status 1 (failed).
+  INFO [95777ab7] Running /usr/bin/env ln -s /var/www/blogMVC/shared/var/cache /var/www/blogMVC/releases/20180816142938/var/cache as deploy@oipnet.info
+ DEBUG [95777ab7] Command: /usr/bin/env ln -s /var/www/blogMVC/shared/var/cache /var/www/blogMVC/releases/20180816142938/var/cache
+  INFO [698e9d9c] Finished in 0.159 seconds with exit status 0 (successful).
+  INFO [f69d2730] Running /usr/bin/env ln -s /var/www/blogMVC/releases/20180816142938 /var/www/blogMVC/releases/current as deploy@oipnet.info
+ DEBUG [f69d2730] Command: /usr/bin/env ln -s /var/www/blogMVC/releases/20180816142938 /var/www/blogMVC/releases/current
+  INFO [54aab2da] Finished in 0.156 seconds with exit status 0 (successful).
+  INFO [325beb9b] Running /usr/bin/env mv /var/www/blogMVC/releases/current /var/www/blogMVC as deploy@oipnet.info
+ DEBUG [325beb9b] Command: /usr/bin/env mv /var/www/blogMVC/releases/current /var/www/blogMVC
+  INFO [9e2c0837] Finished in 0.159 seconds with exit status 0 (successful).
+ DEBUG [a88abca9] Running /usr/bin/env ls -x /var/www/blogMVC/releases as deploy@oipnet.info
+ DEBUG [a88abca9] Command: /usr/bin/env ls -x /var/www/blogMVC/releases
+ DEBUG [6fb27637] 	20180816142211	20180816142350	20180816142938
+ DEBUG [6fb27637] Finished in 0.159 seconds with exit status 0 (successful).
+ DEBUG [c7ea04ed] Running if test ! -d /var/www/blogMVC/releases; then echo "Directory does not exist '/var/www/blogMVC/releases'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [c7ea04ed] Command: if test ! -d /var/www/blogMVC/releases; then echo "Directory does not exist '/var/www/blogMVC/releases'" 1>&2; false; fi
+ DEBUG [179eb312] Finished in 0.157 seconds with exit status 0 (successful).
+  INFO [2cfb282b] Running /usr/bin/env echo "Branch master (at bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843) deployed as release 20180816142938 by arnaud" >> /var/www/blogMVC/revisions.log as deploy@oipnet.info
+ DEBUG [2cfb282b] Command: cd /var/www/blogMVC/releases && /usr/bin/env echo "Branch master (at bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843) deployed as release 20180816142938 by arnaud" >> /var/www/blogMVC/revisions.log
+  INFO [c853a561] Finished in 0.159 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-08-16 16:32:52 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [2114b5cf] Running /usr/bin/env mkdir -p /tmp as deploy@oipnet.info
+ DEBUG [2114b5cf] Command: /usr/bin/env mkdir -p /tmp
+  INFO [e0be926d] Finished in 0.909 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-BlogMVC-production-arnaud.sh 0.0%
+  INFO Uploading /tmp/git-ssh-BlogMVC-production-arnaud.sh 100.0%
+  INFO [aa5bafd2] Running /usr/bin/env chmod 700 /tmp/git-ssh-BlogMVC-production-arnaud.sh as deploy@oipnet.info
+ DEBUG [aa5bafd2] Command: /usr/bin/env chmod 700 /tmp/git-ssh-BlogMVC-production-arnaud.sh
+  INFO [06d3c3b3] Finished in 0.158 seconds with exit status 0 (successful).
+  INFO [7e2f3eee] Running /usr/bin/env git ls-remote git@github.com:Oipnet/blogMvc.git HEAD as deploy@oipnet.info
+ DEBUG [7e2f3eee] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git ls-remote git@github.com:Oipnet/blogMvc.git HEAD )
+ DEBUG [2570aee9] 	bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843	HEAD
+  INFO [2570aee9] Finished in 1.374 seconds with exit status 0 (successful).
+  INFO [3fe20806] Running /usr/bin/env mkdir -p /var/www/blogMVC/shared /var/www/blogMVC/releases as deploy@oipnet.info
+ DEBUG [3fe20806] Command: /usr/bin/env mkdir -p /var/www/blogMVC/shared /var/www/blogMVC/releases
+  INFO [e6f4d5e3] Finished in 0.116 seconds with exit status 0 (successful).
+  INFO [8c381b45] Running /usr/bin/env mkdir -p /var/www/blogMVC/shared/var/cache as deploy@oipnet.info
+ DEBUG [8c381b45] Command: /usr/bin/env mkdir -p /var/www/blogMVC/shared/var/cache
+  INFO [9ff702f4] Finished in 0.159 seconds with exit status 0 (successful).
+ DEBUG [44e867a5] Running [ -f /var/www/blogMVC/current/REVISION ] as deploy@oipnet.info
+ DEBUG [44e867a5] Command: [ -f /var/www/blogMVC/current/REVISION ]
+ DEBUG [8a335d9b] Finished in 0.156 seconds with exit status 0 (successful).
+ DEBUG [1b3f9948] Running /usr/bin/env cat /var/www/blogMVC/current/REVISION 2>/dev/null as deploy@oipnet.info
+ DEBUG [1b3f9948] Command: /usr/bin/env cat /var/www/blogMVC/current/REVISION 2>/dev/null
+ DEBUG [f628df26] 	bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843
+ DEBUG [f628df26] Finished in 0.159 seconds with exit status 0 (successful).
+ DEBUG [36af1e3b] Running [ -f /var/www/blogMVC/repo/HEAD ] as deploy@oipnet.info
+ DEBUG [36af1e3b] Command: [ -f /var/www/blogMVC/repo/HEAD ]
+ DEBUG [5cd3fc31] Finished in 0.159 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/blogMVC/repo
+ DEBUG [bf03b08b] Running if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [bf03b08b] Command: if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi
+ DEBUG [dd8d8f32] Finished in 0.162 seconds with exit status 0 (successful).
+  INFO [5c4493f0] Running /usr/bin/env git remote set-url origin git@github.com:Oipnet/blogMvc.git as deploy@oipnet.info
+ DEBUG [5c4493f0] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git remote set-url origin git@github.com:Oipnet/blogMvc.git )
+  INFO [a6483fbb] Finished in 0.170 seconds with exit status 0 (successful).
+  INFO [53dac766] Running /usr/bin/env git remote update --prune as deploy@oipnet.info
+ DEBUG [53dac766] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [c1c721c7] 	Fetching origin
+  INFO [c1c721c7] Finished in 1.434 seconds with exit status 0 (successful).
+ DEBUG [43162d9a] Running if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [43162d9a] Command: if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi
+ DEBUG [07fc849c] Finished in 0.135 seconds with exit status 0 (successful).
+  INFO [510e8204] Running /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816143255 as deploy@oipnet.info
+ DEBUG [510e8204] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816143255 )
+  INFO [23ba00ff] Finished in 0.171 seconds with exit status 0 (successful).
+  INFO [9ee00198] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/blogMVC/releases/20180816143255 as deploy@oipnet.info
+ DEBUG [9ee00198] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/blogMVC/releases/20180816143255 )
+  INFO [80403e32] Finished in 0.184 seconds with exit status 0 (successful).
+ DEBUG [a12d1c19] Running if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [a12d1c19] Command: if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi
+ DEBUG [eca5dc01] Finished in 0.155 seconds with exit status 0 (successful).
+ DEBUG [adc8e45c] Running /usr/bin/env git rev-list --max-count=1 master as deploy@oipnet.info
+ DEBUG [adc8e45c] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [021e73a5] 	bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843
+ DEBUG [021e73a5] Finished in 0.163 seconds with exit status 0 (successful).
+ DEBUG [d86ce723] Running if test ! -d /var/www/blogMVC/releases/20180816143255; then echo "Directory does not exist '/var/www/blogMVC/releases/20180816143255'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [d86ce723] Command: if test ! -d /var/www/blogMVC/releases/20180816143255; then echo "Directory does not exist '/var/www/blogMVC/releases/20180816143255'" 1>&2; false; fi
+ DEBUG [464ff769] Finished in 0.165 seconds with exit status 0 (successful).
+  INFO [5ff22f19] Running /usr/bin/env echo "bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843" > REVISION as deploy@oipnet.info
+ DEBUG [5ff22f19] Command: cd /var/www/blogMVC/releases/20180816143255 && /usr/bin/env echo "bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843" > REVISION
+  INFO [66a9966d] Finished in 0.179 seconds with exit status 0 (successful).
+  INFO [4f5dcdd5] Running /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816143255/var as deploy@oipnet.info
+ DEBUG [4f5dcdd5] Command: /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816143255/var
+  INFO [91ee07e4] Finished in 0.154 seconds with exit status 0 (successful).
+ DEBUG [4d990d4f] Running [ -L /var/www/blogMVC/releases/20180816143255/var/cache ] as deploy@oipnet.info
+ DEBUG [4d990d4f] Command: [ -L /var/www/blogMVC/releases/20180816143255/var/cache ]
+ DEBUG [c6cba71e] Finished in 0.153 seconds with exit status 1 (failed).
+ DEBUG [439d2746] Running [ -d /var/www/blogMVC/releases/20180816143255/var/cache ] as deploy@oipnet.info
+ DEBUG [439d2746] Command: [ -d /var/www/blogMVC/releases/20180816143255/var/cache ]
+ DEBUG [946a524f] Finished in 0.160 seconds with exit status 1 (failed).
+  INFO [a33e59d5] Running /usr/bin/env ln -s /var/www/blogMVC/shared/var/cache /var/www/blogMVC/releases/20180816143255/var/cache as deploy@oipnet.info
+ DEBUG [a33e59d5] Command: /usr/bin/env ln -s /var/www/blogMVC/shared/var/cache /var/www/blogMVC/releases/20180816143255/var/cache
+  INFO [368df181] Finished in 0.156 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-08-16 16:33:50 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [835b0ad9] Running /usr/bin/env mkdir -p /tmp as deploy@oipnet.info
+ DEBUG [835b0ad9] Command: /usr/bin/env mkdir -p /tmp
+  INFO [6b68dc8e] Finished in 0.901 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-BlogMVC-production-arnaud.sh 0.0%
+  INFO Uploading /tmp/git-ssh-BlogMVC-production-arnaud.sh 100.0%
+  INFO [73c95ebe] Running /usr/bin/env chmod 700 /tmp/git-ssh-BlogMVC-production-arnaud.sh as deploy@oipnet.info
+ DEBUG [73c95ebe] Command: /usr/bin/env chmod 700 /tmp/git-ssh-BlogMVC-production-arnaud.sh
+  INFO [4c794a18] Finished in 0.165 seconds with exit status 0 (successful).
+  INFO [9d676ea0] Running /usr/bin/env git ls-remote git@github.com:Oipnet/blogMvc.git HEAD as deploy@oipnet.info
+ DEBUG [9d676ea0] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git ls-remote git@github.com:Oipnet/blogMvc.git HEAD )
+ DEBUG [da932abd] 	bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843	HEAD
+  INFO [da932abd] Finished in 1.399 seconds with exit status 0 (successful).
+  INFO [2327c382] Running /usr/bin/env mkdir -p /var/www/blogMVC/shared /var/www/blogMVC/releases as deploy@oipnet.info
+ DEBUG [2327c382] Command: /usr/bin/env mkdir -p /var/www/blogMVC/shared /var/www/blogMVC/releases
+  INFO [dd53eed5] Finished in 0.117 seconds with exit status 0 (successful).
+  INFO [0037de8b] Running /usr/bin/env mkdir -p /var/www/blogMVC/shared/var/cache as deploy@oipnet.info
+ DEBUG [0037de8b] Command: /usr/bin/env mkdir -p /var/www/blogMVC/shared/var/cache
+  INFO [d5efbdb4] Finished in 0.155 seconds with exit status 0 (successful).
+ DEBUG [29b05866] Running [ -f /var/www/blogMVC/current/REVISION ] as deploy@oipnet.info
+ DEBUG [29b05866] Command: [ -f /var/www/blogMVC/current/REVISION ]
+ DEBUG [5db6f32a] Finished in 0.157 seconds with exit status 0 (successful).
+ DEBUG [6784f523] Running /usr/bin/env cat /var/www/blogMVC/current/REVISION 2>/dev/null as deploy@oipnet.info
+ DEBUG [6784f523] Command: /usr/bin/env cat /var/www/blogMVC/current/REVISION 2>/dev/null
+ DEBUG [77397f2c] 	bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843
+ DEBUG [77397f2c] Finished in 0.159 seconds with exit status 0 (successful).
+ DEBUG [9f3e556c] Running [ -f /var/www/blogMVC/repo/HEAD ] as deploy@oipnet.info
+ DEBUG [9f3e556c] Command: [ -f /var/www/blogMVC/repo/HEAD ]
+ DEBUG [4fadada7] Finished in 0.155 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/blogMVC/repo
+ DEBUG [cc3a18c7] Running if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [cc3a18c7] Command: if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi
+ DEBUG [f26e32e1] Finished in 0.158 seconds with exit status 0 (successful).
+  INFO [80de89da] Running /usr/bin/env git remote set-url origin git@github.com:Oipnet/blogMvc.git as deploy@oipnet.info
+ DEBUG [80de89da] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git remote set-url origin git@github.com:Oipnet/blogMvc.git )
+  INFO [7c83a794] Finished in 0.165 seconds with exit status 0 (successful).
+  INFO [753e3610] Running /usr/bin/env git remote update --prune as deploy@oipnet.info
+ DEBUG [753e3610] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [82188117] 	Fetching origin
+  INFO [82188117] Finished in 1.407 seconds with exit status 0 (successful).
+ DEBUG [0344e22e] Running if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [0344e22e] Command: if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi
+ DEBUG [ea19cc6c] Finished in 0.112 seconds with exit status 0 (successful).
+  INFO [8705d6ab] Running /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816143354 as deploy@oipnet.info
+ DEBUG [8705d6ab] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816143354 )
+  INFO [23ec24fd] Finished in 0.160 seconds with exit status 0 (successful).
+  INFO [e27f9ae7] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/blogMVC/releases/20180816143354 as deploy@oipnet.info
+ DEBUG [e27f9ae7] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/blogMVC/releases/20180816143354 )
+  INFO [3df66456] Finished in 0.181 seconds with exit status 0 (successful).
+ DEBUG [87bc5d92] Running if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [87bc5d92] Command: if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi
+ DEBUG [f1afaae4] Finished in 0.158 seconds with exit status 0 (successful).
+ DEBUG [198c852e] Running /usr/bin/env git rev-list --max-count=1 master as deploy@oipnet.info
+ DEBUG [198c852e] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [89534fba] 	bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843
+ DEBUG [89534fba] Finished in 0.165 seconds with exit status 0 (successful).
+ DEBUG [f7d42063] Running if test ! -d /var/www/blogMVC/releases/20180816143354; then echo "Directory does not exist '/var/www/blogMVC/releases/20180816143354'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [f7d42063] Command: if test ! -d /var/www/blogMVC/releases/20180816143354; then echo "Directory does not exist '/var/www/blogMVC/releases/20180816143354'" 1>&2; false; fi
+ DEBUG [c20d47b3] Finished in 0.158 seconds with exit status 0 (successful).
+  INFO [2984f3e1] Running /usr/bin/env echo "bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843" > REVISION as deploy@oipnet.info
+ DEBUG [2984f3e1] Command: cd /var/www/blogMVC/releases/20180816143354 && /usr/bin/env echo "bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843" > REVISION
+  INFO [0476c4c9] Finished in 0.158 seconds with exit status 0 (successful).
+  INFO [17b79dab] Running /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816143354/var as deploy@oipnet.info
+ DEBUG [17b79dab] Command: /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816143354/var
+  INFO [ac3003a9] Finished in 0.160 seconds with exit status 0 (successful).
+ DEBUG [91e89d97] Running [ -L /var/www/blogMVC/releases/20180816143354/var/cache ] as deploy@oipnet.info
+ DEBUG [91e89d97] Command: [ -L /var/www/blogMVC/releases/20180816143354/var/cache ]
+ DEBUG [b0c394f4] Finished in 0.158 seconds with exit status 1 (failed).
+ DEBUG [5e291a24] Running [ -d /var/www/blogMVC/releases/20180816143354/var/cache ] as deploy@oipnet.info
+ DEBUG [5e291a24] Command: [ -d /var/www/blogMVC/releases/20180816143354/var/cache ]
+ DEBUG [662eb4c7] Finished in 0.156 seconds with exit status 1 (failed).
+  INFO [d80d1a23] Running /usr/bin/env ln -s /var/www/blogMVC/shared/var/cache /var/www/blogMVC/releases/20180816143354/var/cache as deploy@oipnet.info
+ DEBUG [d80d1a23] Command: /usr/bin/env ln -s /var/www/blogMVC/shared/var/cache /var/www/blogMVC/releases/20180816143354/var/cache
+  INFO [2e7c407b] Finished in 0.157 seconds with exit status 0 (successful).
+ DEBUG [60c5ad60] Running if test ! -d /var/www/blogMVC/releases/20180816143354; then echo "Directory does not exist '/var/www/blogMVC/releases/20180816143354'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [60c5ad60] Command: if test ! -d /var/www/blogMVC/releases/20180816143354; then echo "Directory does not exist '/var/www/blogMVC/releases/20180816143354'" 1>&2; false; fi
+ DEBUG [dab41fd4] Finished in 0.157 seconds with exit status 0 (successful).
+  INFO [9fce16e7] Running /usr/bin/env compose install as deploy@oipnet.info
+ DEBUG [9fce16e7] Command: cd /var/www/blogMVC/releases/20180816143354 && /usr/bin/env compose install
+ DEBUG [664a08a8] 	Unescaped left brace in regex is deprecated, passed through in regex; marked by <-- HERE in m/%{ <-- HERE (.*?)}/ at /usr/bin/compose line 528.
+ DEBUG [664a08a8] 	Error: no "compose" mailcap rules found for type "cannot open `install' (No such file or directory)"
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-08-16 16:34:11 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [3086d515] Running /usr/bin/env mkdir -p /tmp as deploy@oipnet.info
+ DEBUG [3086d515] Command: /usr/bin/env mkdir -p /tmp
+  INFO [3274f054] Finished in 0.878 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-BlogMVC-production-arnaud.sh 0.0%
+  INFO Uploading /tmp/git-ssh-BlogMVC-production-arnaud.sh 100.0%
+  INFO [edcb5801] Running /usr/bin/env chmod 700 /tmp/git-ssh-BlogMVC-production-arnaud.sh as deploy@oipnet.info
+ DEBUG [edcb5801] Command: /usr/bin/env chmod 700 /tmp/git-ssh-BlogMVC-production-arnaud.sh
+  INFO [0639fab0] Finished in 0.161 seconds with exit status 0 (successful).
+  INFO [e0c9ad19] Running /usr/bin/env git ls-remote git@github.com:Oipnet/blogMvc.git HEAD as deploy@oipnet.info
+ DEBUG [e0c9ad19] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git ls-remote git@github.com:Oipnet/blogMvc.git HEAD )
+ DEBUG [e6e0299a] 	bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843	HEAD
+  INFO [e6e0299a] Finished in 1.387 seconds with exit status 0 (successful).
+  INFO [026250f5] Running /usr/bin/env mkdir -p /var/www/blogMVC/shared /var/www/blogMVC/releases as deploy@oipnet.info
+ DEBUG [026250f5] Command: /usr/bin/env mkdir -p /var/www/blogMVC/shared /var/www/blogMVC/releases
+  INFO [277d6dc0] Finished in 0.121 seconds with exit status 0 (successful).
+  INFO [a1073f1a] Running /usr/bin/env mkdir -p /var/www/blogMVC/shared/var/cache as deploy@oipnet.info
+ DEBUG [a1073f1a] Command: /usr/bin/env mkdir -p /var/www/blogMVC/shared/var/cache
+  INFO [3b89767b] Finished in 0.162 seconds with exit status 0 (successful).
+ DEBUG [49b4a4d2] Running [ -f /var/www/blogMVC/current/REVISION ] as deploy@oipnet.info
+ DEBUG [49b4a4d2] Command: [ -f /var/www/blogMVC/current/REVISION ]
+ DEBUG [3aa26cdd] Finished in 0.158 seconds with exit status 0 (successful).
+ DEBUG [eb0f454e] Running /usr/bin/env cat /var/www/blogMVC/current/REVISION 2>/dev/null as deploy@oipnet.info
+ DEBUG [eb0f454e] Command: /usr/bin/env cat /var/www/blogMVC/current/REVISION 2>/dev/null
+ DEBUG [d5021610] 	bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843
+ DEBUG [d5021610] Finished in 0.161 seconds with exit status 0 (successful).
+ DEBUG [c4661e53] Running [ -f /var/www/blogMVC/repo/HEAD ] as deploy@oipnet.info
+ DEBUG [c4661e53] Command: [ -f /var/www/blogMVC/repo/HEAD ]
+ DEBUG [f2de14bf] Finished in 0.154 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/blogMVC/repo
+ DEBUG [9a6dbf95] Running if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [9a6dbf95] Command: if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi
+ DEBUG [1c701711] Finished in 0.156 seconds with exit status 0 (successful).
+  INFO [1b673906] Running /usr/bin/env git remote set-url origin git@github.com:Oipnet/blogMvc.git as deploy@oipnet.info
+ DEBUG [1b673906] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git remote set-url origin git@github.com:Oipnet/blogMvc.git )
+  INFO [964a5ba2] Finished in 0.161 seconds with exit status 0 (successful).
+  INFO [775f50a8] Running /usr/bin/env git remote update --prune as deploy@oipnet.info
+ DEBUG [775f50a8] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [9ac04501] 	Fetching origin
+  INFO [9ac04501] Finished in 1.430 seconds with exit status 0 (successful).
+ DEBUG [9f1bc704] Running if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [9f1bc704] Command: if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi
+ DEBUG [15cbe1b0] Finished in 0.118 seconds with exit status 0 (successful).
+  INFO [8da4836a] Running /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816143415 as deploy@oipnet.info
+ DEBUG [8da4836a] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816143415 )
+  INFO [060aaaa0] Finished in 0.160 seconds with exit status 0 (successful).
+  INFO [0dc387d0] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/blogMVC/releases/20180816143415 as deploy@oipnet.info
+ DEBUG [0dc387d0] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/blogMVC/releases/20180816143415 )
+  INFO [73f37e5a] Finished in 0.184 seconds with exit status 0 (successful).
+ DEBUG [a580631a] Running if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [a580631a] Command: if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi
+ DEBUG [86b172fa] Finished in 0.159 seconds with exit status 0 (successful).
+ DEBUG [9d1f3373] Running /usr/bin/env git rev-list --max-count=1 master as deploy@oipnet.info
+ DEBUG [9d1f3373] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [1fffe31d] 	bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843
+ DEBUG [1fffe31d] Finished in 0.165 seconds with exit status 0 (successful).
+ DEBUG [2cfa772b] Running if test ! -d /var/www/blogMVC/releases/20180816143415; then echo "Directory does not exist '/var/www/blogMVC/releases/20180816143415'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [2cfa772b] Command: if test ! -d /var/www/blogMVC/releases/20180816143415; then echo "Directory does not exist '/var/www/blogMVC/releases/20180816143415'" 1>&2; false; fi
+ DEBUG [76eb30c1] Finished in 0.157 seconds with exit status 0 (successful).
+  INFO [841de28c] Running /usr/bin/env echo "bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843" > REVISION as deploy@oipnet.info
+ DEBUG [841de28c] Command: cd /var/www/blogMVC/releases/20180816143415 && /usr/bin/env echo "bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843" > REVISION
+  INFO [c6b7105f] Finished in 0.161 seconds with exit status 0 (successful).
+  INFO [5659ff7c] Running /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816143415/var as deploy@oipnet.info
+ DEBUG [5659ff7c] Command: /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816143415/var
+  INFO [8f63d466] Finished in 0.157 seconds with exit status 0 (successful).
+ DEBUG [50495812] Running [ -L /var/www/blogMVC/releases/20180816143415/var/cache ] as deploy@oipnet.info
+ DEBUG [50495812] Command: [ -L /var/www/blogMVC/releases/20180816143415/var/cache ]
+ DEBUG [b2bc1c40] Finished in 0.154 seconds with exit status 1 (failed).
+ DEBUG [d21080e9] Running [ -d /var/www/blogMVC/releases/20180816143415/var/cache ] as deploy@oipnet.info
+ DEBUG [d21080e9] Command: [ -d /var/www/blogMVC/releases/20180816143415/var/cache ]
+ DEBUG [d305f5da] Finished in 0.158 seconds with exit status 1 (failed).
+  INFO [513b4fd5] Running /usr/bin/env ln -s /var/www/blogMVC/shared/var/cache /var/www/blogMVC/releases/20180816143415/var/cache as deploy@oipnet.info
+ DEBUG [513b4fd5] Command: /usr/bin/env ln -s /var/www/blogMVC/shared/var/cache /var/www/blogMVC/releases/20180816143415/var/cache
+  INFO [55b95cfd] Finished in 0.160 seconds with exit status 0 (successful).
+ DEBUG [6a18d65d] Running if test ! -d /var/www/blogMVC/releases/20180816143415; then echo "Directory does not exist '/var/www/blogMVC/releases/20180816143415'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [6a18d65d] Command: if test ! -d /var/www/blogMVC/releases/20180816143415; then echo "Directory does not exist '/var/www/blogMVC/releases/20180816143415'" 1>&2; false; fi
+ DEBUG [8a3f62f2] Finished in 0.157 seconds with exit status 0 (successful).
+  INFO [f443540c] Running /usr/bin/env composer install as deploy@oipnet.info
+ DEBUG [f443540c] Command: cd /var/www/blogMVC/releases/20180816143415 && /usr/bin/env composer install
+ DEBUG [29a27ef4] 	Loading composer repositories with package information
+ DEBUG [29a27ef4] 	
+ DEBUG [29a27ef4] 	Installing dependencies (including require-dev) from lock file
+ DEBUG [29a27ef4] 	
+ DEBUG [29a27ef4] 	Package operations: 4 installs, 0 updates, 0 removals
+ DEBUG [29a27ef4] 	
+ DEBUG [29a27ef4] 	  - Installing psr/http-message (1.0.1): 
+ DEBUG [29a27ef4] 	Downloading (connecting...)
+ DEBUG [29a27ef4] 	
+ DEBUG [29a27ef4] 	Downloading (0%)
+ DEBUG [29a27ef4] 	           
+ DEBUG [29a27ef4] 	
+ DEBUG [29a27ef4] 	
+ DEBUG [29a27ef4] 	Downloading (95%)
+ DEBUG [29a27ef4] 	
+ DEBUG [29a27ef4] 	Downloading (100%)
+ DEBUG [29a27ef4] 	
+ DEBUG [29a27ef4] 	  - Installing symfony/polyfill-mbstring (v1.9.0): 
+ DEBUG [29a27ef4] 	Downloading (connecting...)
+ DEBUG [29a27ef4] 	
+ DEBUG [29a27ef4] 	Downloading (0%)
+ DEBUG [29a27ef4] 	           
+ DEBUG [29a27ef4] 	
+ DEBUG [29a27ef4] 	
+ DEBUG [29a27ef4] 	Downloading (30%)
+ DEBUG [29a27ef4] 	
+ DEBUG [29a27ef4] 	Downloading (55%)
+ DEBUG [29a27ef4] 	
+ DEBUG [29a27ef4] 	Downloading (100%)
+ DEBUG [29a27ef4] 	
+ DEBUG [29a27ef4] 	  - Installing symfony/polyfill-ctype (v1.9.0): Downloading (connecting...)
+ DEBUG [29a27ef4] 	
+ DEBUG [29a27ef4] 	Downloading (0%)
+ DEBUG [29a27ef4] 	           
+ DEBUG [29a27ef4] 	
+ DEBUG [29a27ef4] 	
+ DEBUG [29a27ef4] 	Downloading (100%)
+ DEBUG [29a27ef4] 	
+ DEBUG [29a27ef4] 	  - Installing twig/twig (v2.5.0): 
+ DEBUG [29a27ef4] 	Downloading (connecting...)
+ DEBUG [29a27ef4] 	
+ DEBUG [29a27ef4] 	Downloading (0%)
+ DEBUG [29a27ef4] 	           
+ DEBUG [29a27ef4] 	
+ DEBUG [29a27ef4] 	
+ DEBUG [29a27ef4] 	Downloading (5%)
+ DEBUG [29a27ef4] 	
+ DEBUG [29a27ef4] 	Downloading (10%)
+ DEBUG [29a27ef4] 	
+ DEBUG [29a27ef4] 	Downloading (15%)
+ DEBUG [29a27ef4] 	
+ DEBUG [29a27ef4] 	Downloading (20%)
+ DEBUG [29a27ef4] 	
+ DEBUG [29a27ef4] 	Downloading (25%)
+ DEBUG [29a27ef4] 	
+ DEBUG [29a27ef4] 	Downloading (30%)
+ DEBUG [29a27ef4] 	
+ DEBUG [29a27ef4] 	Downloading (35%)
+ DEBUG [29a27ef4] 	
+ DEBUG [29a27ef4] 	Downloading (40%)
+ DEBUG [29a27ef4] 	
+ DEBUG [29a27ef4] 	Downloading (45%)
+ DEBUG [29a27ef4] 	
+ DEBUG [29a27ef4] 	Downloading (50%)
+ DEBUG [29a27ef4] 	
+ DEBUG [29a27ef4] 	Downloading (55%)
+ DEBUG [29a27ef4] 	
+ DEBUG [29a27ef4] 	Downloading (60%)
+ DEBUG [29a27ef4] 	
+ DEBUG [29a27ef4] 	Downloading (65%)
+ DEBUG [29a27ef4] 	
+ DEBUG [29a27ef4] 	Downloading (70%)
+ DEBUG [29a27ef4] 	
+ DEBUG [29a27ef4] 	Downloading (75%)
+ DEBUG [29a27ef4] 	
+ DEBUG [29a27ef4] 	Downloading (80%)
+ DEBUG [29a27ef4] 	
+ DEBUG [29a27ef4] 	Downloading (85%)
+ DEBUG [29a27ef4] 	
+ DEBUG [29a27ef4] 	Downloading (90%)
+ DEBUG [29a27ef4] 	
+ DEBUG [29a27ef4] 	Downloading (95%)
+ DEBUG [29a27ef4] 	
+ DEBUG [29a27ef4] 	Downloading (100%)
+ DEBUG [29a27ef4] 	
+ DEBUG [29a27ef4] 	Generating autoload files
+ DEBUG [29a27ef4] 	
+  INFO [29a27ef4] Finished in 4.823 seconds with exit status 0 (successful).
+  INFO [44237e6c] Running /usr/bin/env ln -s /var/www/blogMVC/releases/20180816143415 /var/www/blogMVC/releases/current as deploy@oipnet.info
+ DEBUG [44237e6c] Command: /usr/bin/env ln -s /var/www/blogMVC/releases/20180816143415 /var/www/blogMVC/releases/current
+  INFO [4bfc4f1f] Finished in 0.159 seconds with exit status 0 (successful).
+  INFO [18aa49d2] Running /usr/bin/env mv /var/www/blogMVC/releases/current /var/www/blogMVC as deploy@oipnet.info
+ DEBUG [18aa49d2] Command: /usr/bin/env mv /var/www/blogMVC/releases/current /var/www/blogMVC
+  INFO [8c27a312] Finished in 0.161 seconds with exit status 0 (successful).
+ DEBUG [5fa8afce] Running /usr/bin/env ls -x /var/www/blogMVC/releases as deploy@oipnet.info
+ DEBUG [5fa8afce] Command: /usr/bin/env ls -x /var/www/blogMVC/releases
+ DEBUG [ac2114d3] 	20180816142211	20180816142350	20180816142938	20180816143255	20180816143354
+20180816143415
+ DEBUG [ac2114d3] Finished in 0.161 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on oipnet.info
+ DEBUG [0a2b7d2f] Running [ -d /var/www/blogMVC/current ] as deploy@oipnet.info
+ DEBUG [0a2b7d2f] Command: [ -d /var/www/blogMVC/current ]
+ DEBUG [b0ae74e5] Finished in 0.153 seconds with exit status 0 (successful).
+ DEBUG [f812062a] Running /usr/bin/env readlink /var/www/blogMVC/current as deploy@oipnet.info
+ DEBUG [f812062a] Command: /usr/bin/env readlink /var/www/blogMVC/current
+ DEBUG [ac1491ee] 	/var/www/blogMVC/releases/20180816143415
+ DEBUG [ac1491ee] Finished in 0.160 seconds with exit status 0 (successful).
+  INFO [d77c9c0e] Running /usr/bin/env rm -rf /var/www/blogMVC/releases/20180816142211 as deploy@oipnet.info
+ DEBUG [d77c9c0e] Command: /usr/bin/env rm -rf /var/www/blogMVC/releases/20180816142211
+  INFO [e35aa9fa] Finished in 0.164 seconds with exit status 0 (successful).
+ DEBUG [4e53ad8e] Running if test ! -d /var/www/blogMVC/releases; then echo "Directory does not exist '/var/www/blogMVC/releases'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [4e53ad8e] Command: if test ! -d /var/www/blogMVC/releases; then echo "Directory does not exist '/var/www/blogMVC/releases'" 1>&2; false; fi
+ DEBUG [2dce4e1b] Finished in 0.157 seconds with exit status 0 (successful).
+  INFO [37c9bfdb] Running /usr/bin/env echo "Branch master (at bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843) deployed as release 20180816143415 by arnaud" >> /var/www/blogMVC/revisions.log as deploy@oipnet.info
+ DEBUG [37c9bfdb] Command: cd /var/www/blogMVC/releases && /usr/bin/env echo "Branch master (at bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843) deployed as release 20180816143415 by arnaud" >> /var/www/blogMVC/revisions.log
+  INFO [4c6197ed] Finished in 0.160 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-08-16 16:37:14 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [11ef546a] Running /usr/bin/env mkdir -p /tmp as deploy@oipnet.info
+ DEBUG [11ef546a] Command: /usr/bin/env mkdir -p /tmp
+  INFO [1c6b0f69] Finished in 0.881 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-BlogMVC-production-arnaud.sh 0.0%
+  INFO Uploading /tmp/git-ssh-BlogMVC-production-arnaud.sh 100.0%
+  INFO [f113f9f8] Running /usr/bin/env chmod 700 /tmp/git-ssh-BlogMVC-production-arnaud.sh as deploy@oipnet.info
+ DEBUG [f113f9f8] Command: /usr/bin/env chmod 700 /tmp/git-ssh-BlogMVC-production-arnaud.sh
+  INFO [434a5715] Finished in 0.161 seconds with exit status 0 (successful).
+  INFO [0c7f89a1] Running /usr/bin/env git ls-remote git@github.com:Oipnet/blogMvc.git HEAD as deploy@oipnet.info
+ DEBUG [0c7f89a1] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git ls-remote git@github.com:Oipnet/blogMvc.git HEAD )
+ DEBUG [97c87e80] 	bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843	HEAD
+  INFO [97c87e80] Finished in 1.394 seconds with exit status 0 (successful).
+  INFO [222f9152] Running /usr/bin/env mkdir -p /var/www/blogMVC/shared /var/www/blogMVC/releases as deploy@oipnet.info
+ DEBUG [222f9152] Command: /usr/bin/env mkdir -p /var/www/blogMVC/shared /var/www/blogMVC/releases
+  INFO [d36a4e4c] Finished in 0.126 seconds with exit status 0 (successful).
+  INFO [374e8584] Running /usr/bin/env mkdir -p /var/www/blogMVC/shared/var/cache as deploy@oipnet.info
+ DEBUG [374e8584] Command: /usr/bin/env mkdir -p /var/www/blogMVC/shared/var/cache
+  INFO [25408712] Finished in 0.157 seconds with exit status 0 (successful).
+ DEBUG [bd3fb9eb] Running [ -f /var/www/blogMVC/current/REVISION ] as deploy@oipnet.info
+ DEBUG [bd3fb9eb] Command: [ -f /var/www/blogMVC/current/REVISION ]
+ DEBUG [387bae5c] Finished in 0.157 seconds with exit status 0 (successful).
+ DEBUG [54155735] Running /usr/bin/env cat /var/www/blogMVC/current/REVISION 2>/dev/null as deploy@oipnet.info
+ DEBUG [54155735] Command: /usr/bin/env cat /var/www/blogMVC/current/REVISION 2>/dev/null
+ DEBUG [0d388da2] 	bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843
+ DEBUG [0d388da2] Finished in 0.158 seconds with exit status 0 (successful).
+ DEBUG [71a23ba8] Running [ -f /var/www/blogMVC/repo/HEAD ] as deploy@oipnet.info
+ DEBUG [71a23ba8] Command: [ -f /var/www/blogMVC/repo/HEAD ]
+ DEBUG [b5b9f1d8] Finished in 0.156 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/blogMVC/repo
+ DEBUG [6edfe1e2] Running if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [6edfe1e2] Command: if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi
+ DEBUG [fd7bba38] Finished in 0.157 seconds with exit status 0 (successful).
+  INFO [11b86c36] Running /usr/bin/env git remote set-url origin git@github.com:Oipnet/blogMvc.git as deploy@oipnet.info
+ DEBUG [11b86c36] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git remote set-url origin git@github.com:Oipnet/blogMvc.git )
+  INFO [0b992d86] Finished in 0.161 seconds with exit status 0 (successful).
+  INFO [aa1827c5] Running /usr/bin/env git remote update --prune as deploy@oipnet.info
+ DEBUG [aa1827c5] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [de6bd879] 	Fetching origin
+  INFO [de6bd879] Finished in 1.530 seconds with exit status 0 (successful).
+ DEBUG [f3da8f27] Running if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [f3da8f27] Command: if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi
+ DEBUG [e9cb30dc] Finished in 0.112 seconds with exit status 0 (successful).
+  INFO [e3c6b6ad] Running /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816143717 as deploy@oipnet.info
+ DEBUG [e3c6b6ad] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816143717 )
+  INFO [b8b84f12] Finished in 0.168 seconds with exit status 0 (successful).
+  INFO [b260d234] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/blogMVC/releases/20180816143717 as deploy@oipnet.info
+ DEBUG [b260d234] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/blogMVC/releases/20180816143717 )
+  INFO [5a8b6788] Finished in 0.175 seconds with exit status 0 (successful).
+ DEBUG [1bdd4c22] Running if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [1bdd4c22] Command: if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi
+ DEBUG [0faccfc3] Finished in 0.156 seconds with exit status 0 (successful).
+ DEBUG [44730841] Running /usr/bin/env git rev-list --max-count=1 master as deploy@oipnet.info
+ DEBUG [44730841] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [f984eb03] 	bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843
+ DEBUG [f984eb03] Finished in 0.167 seconds with exit status 0 (successful).
+ DEBUG [a965afa7] Running if test ! -d /var/www/blogMVC/releases/20180816143717; then echo "Directory does not exist '/var/www/blogMVC/releases/20180816143717'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [a965afa7] Command: if test ! -d /var/www/blogMVC/releases/20180816143717; then echo "Directory does not exist '/var/www/blogMVC/releases/20180816143717'" 1>&2; false; fi
+ DEBUG [75ea62d1] Finished in 0.159 seconds with exit status 0 (successful).
+  INFO [d6a20c84] Running /usr/bin/env echo "bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843" > REVISION as deploy@oipnet.info
+ DEBUG [d6a20c84] Command: cd /var/www/blogMVC/releases/20180816143717 && /usr/bin/env echo "bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843" > REVISION
+  INFO [60b7bc31] Finished in 0.161 seconds with exit status 0 (successful).
+  INFO [62beaae5] Running /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816143717/var as deploy@oipnet.info
+ DEBUG [62beaae5] Command: /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816143717/var
+  INFO [c26bc214] Finished in 0.155 seconds with exit status 0 (successful).
+ DEBUG [3e593c37] Running [ -L /var/www/blogMVC/releases/20180816143717/var/cache ] as deploy@oipnet.info
+ DEBUG [3e593c37] Command: [ -L /var/www/blogMVC/releases/20180816143717/var/cache ]
+ DEBUG [c1a92673] Finished in 0.155 seconds with exit status 1 (failed).
+ DEBUG [7744552f] Running [ -d /var/www/blogMVC/releases/20180816143717/var/cache ] as deploy@oipnet.info
+ DEBUG [7744552f] Command: [ -d /var/www/blogMVC/releases/20180816143717/var/cache ]
+ DEBUG [a9aa1fe6] Finished in 0.156 seconds with exit status 1 (failed).
+  INFO [3ca46c25] Running /usr/bin/env ln -s /var/www/blogMVC/shared/var/cache /var/www/blogMVC/releases/20180816143717/var/cache as deploy@oipnet.info
+ DEBUG [3ca46c25] Command: /usr/bin/env ln -s /var/www/blogMVC/shared/var/cache /var/www/blogMVC/releases/20180816143717/var/cache
+  INFO [89322a6b] Finished in 0.156 seconds with exit status 0 (successful).
+ DEBUG [cc2725d2] Running if test ! -d /var/www/blogMVC/releases/20180816143717; then echo "Directory does not exist '/var/www/blogMVC/releases/20180816143717'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [cc2725d2] Command: if test ! -d /var/www/blogMVC/releases/20180816143717; then echo "Directory does not exist '/var/www/blogMVC/releases/20180816143717'" 1>&2; false; fi
+ DEBUG [0d6bf14a] Finished in 0.157 seconds with exit status 0 (successful).
+  INFO [bed92c66] Running /usr/bin/env composer install as deploy@oipnet.info
+ DEBUG [bed92c66] Command: cd /var/www/blogMVC/releases/20180816143717 && /usr/bin/env composer install
+ DEBUG [3b09d45f] 	Loading composer repositories with package information
+ DEBUG [3b09d45f] 	
+ DEBUG [3b09d45f] 	Installing dependencies (including require-dev) from lock file
+ DEBUG [3b09d45f] 	
+ DEBUG [3b09d45f] 	Package operations: 4 installs, 0 updates, 0 removals
+ DEBUG [3b09d45f] 	
+ DEBUG [3b09d45f] 	  - Installing psr/http-message (1.0.1): 
+ DEBUG [3b09d45f] 	Loading from cache
+ DEBUG [3b09d45f] 	
+ DEBUG [3b09d45f] 	  - Installing symfony/polyfill-mbstring (v1.9.0): Loading from cache
+ DEBUG [3b09d45f] 	  - Installing symfony/polyfill-ctype (v1.9.0): 
+ DEBUG [3b09d45f] 	Loading from cache
+ DEBUG [3b09d45f] 	
+ DEBUG [3b09d45f] 	  - Installing twig/twig (v2.5.0): 
+ DEBUG [3b09d45f] 	Loading from cache
+ DEBUG [3b09d45f] 	
+ DEBUG [3b09d45f] 	Generating autoload files
+ DEBUG [3b09d45f] 	
+  INFO [3b09d45f] Finished in 1.217 seconds with exit status 0 (successful).
+  INFO [ca071f35] Running /usr/bin/env ln -s /var/www/blogMVC/releases/20180816143717 /var/www/blogMVC/releases/current as deploy@oipnet.info
+ DEBUG [ca071f35] Command: /usr/bin/env ln -s /var/www/blogMVC/releases/20180816143717 /var/www/blogMVC/releases/current
+  INFO [f68768a1] Finished in 0.160 seconds with exit status 0 (successful).
+  INFO [495ad200] Running /usr/bin/env mv /var/www/blogMVC/releases/current /var/www/blogMVC as deploy@oipnet.info
+ DEBUG [495ad200] Command: /usr/bin/env mv /var/www/blogMVC/releases/current /var/www/blogMVC
+  INFO [f0ea4e1a] Finished in 0.156 seconds with exit status 0 (successful).
+ DEBUG [b6fec34e] Running /usr/bin/env ls -x /var/www/blogMVC/releases as deploy@oipnet.info
+ DEBUG [b6fec34e] Command: /usr/bin/env ls -x /var/www/blogMVC/releases
+ DEBUG [1cf5e85e] 	20180816142350	20180816142938	20180816143255	20180816143354	20180816143415
+20180816143717
+ DEBUG [1cf5e85e] Finished in 0.157 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on oipnet.info
+ DEBUG [5947b4ba] Running [ -d /var/www/blogMVC/current ] as deploy@oipnet.info
+ DEBUG [5947b4ba] Command: [ -d /var/www/blogMVC/current ]
+ DEBUG [5d052b85] Finished in 0.158 seconds with exit status 0 (successful).
+ DEBUG [c86e4bd5] Running /usr/bin/env readlink /var/www/blogMVC/current as deploy@oipnet.info
+ DEBUG [c86e4bd5] Command: /usr/bin/env readlink /var/www/blogMVC/current
+ DEBUG [ac55a045] 	/var/www/blogMVC/releases/20180816143717
+ DEBUG [ac55a045] Finished in 0.160 seconds with exit status 0 (successful).
+  INFO [16111fe2] Running /usr/bin/env rm -rf /var/www/blogMVC/releases/20180816142350 as deploy@oipnet.info
+ DEBUG [16111fe2] Command: /usr/bin/env rm -rf /var/www/blogMVC/releases/20180816142350
+  INFO [ae00443a] Finished in 0.158 seconds with exit status 0 (successful).
+ DEBUG [71ad8273] Running if test ! -d /var/www/blogMVC/releases; then echo "Directory does not exist '/var/www/blogMVC/releases'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [71ad8273] Command: if test ! -d /var/www/blogMVC/releases; then echo "Directory does not exist '/var/www/blogMVC/releases'" 1>&2; false; fi
+ DEBUG [2d4a3947] Finished in 0.157 seconds with exit status 0 (successful).
+  INFO [7b28ab5f] Running /usr/bin/env echo "Branch master (at bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843) deployed as release 20180816143717 by arnaud" >> /var/www/blogMVC/revisions.log as deploy@oipnet.info
+ DEBUG [7b28ab5f] Command: cd /var/www/blogMVC/releases && /usr/bin/env echo "Branch master (at bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843) deployed as release 20180816143717 by arnaud" >> /var/www/blogMVC/revisions.log
+  INFO [fe80bc3f] Finished in 0.163 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-08-16 16:39:14 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [0960ce50] Running /usr/bin/env mkdir -p /tmp as deploy@oipnet.info
+ DEBUG [0960ce50] Command: /usr/bin/env mkdir -p /tmp
+  INFO [e1a258ca] Finished in 0.907 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-BlogMVC-production-arnaud.sh 0.0%
+  INFO Uploading /tmp/git-ssh-BlogMVC-production-arnaud.sh 100.0%
+  INFO [a221cbb5] Running /usr/bin/env chmod 700 /tmp/git-ssh-BlogMVC-production-arnaud.sh as deploy@oipnet.info
+ DEBUG [a221cbb5] Command: /usr/bin/env chmod 700 /tmp/git-ssh-BlogMVC-production-arnaud.sh
+  INFO [20621d63] Finished in 0.160 seconds with exit status 0 (successful).
+  INFO [a1357b51] Running /usr/bin/env git ls-remote git@github.com:Oipnet/blogMvc.git HEAD as deploy@oipnet.info
+ DEBUG [a1357b51] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git ls-remote git@github.com:Oipnet/blogMvc.git HEAD )
+ DEBUG [8c437570] 	bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843	HEAD
+  INFO [8c437570] Finished in 1.417 seconds with exit status 0 (successful).
+  INFO [10d8e265] Running /usr/bin/env mkdir -p /var/www/blogMVC/shared /var/www/blogMVC/releases as deploy@oipnet.info
+ DEBUG [10d8e265] Command: /usr/bin/env mkdir -p /var/www/blogMVC/shared /var/www/blogMVC/releases
+  INFO [b1e9bb7e] Finished in 0.116 seconds with exit status 0 (successful).
+  INFO [907b3af8] Running /usr/bin/env mkdir -p /var/www/blogMVC/shared/var/cache as deploy@oipnet.info
+ DEBUG [907b3af8] Command: /usr/bin/env mkdir -p /var/www/blogMVC/shared/var/cache
+  INFO [b9ecac9e] Finished in 0.160 seconds with exit status 0 (successful).
+ DEBUG [ba14e661] Running [ -f /var/www/blogMVC/current/REVISION ] as deploy@oipnet.info
+ DEBUG [ba14e661] Command: [ -f /var/www/blogMVC/current/REVISION ]
+ DEBUG [2c962abe] Finished in 0.157 seconds with exit status 0 (successful).
+ DEBUG [62c29f0d] Running /usr/bin/env cat /var/www/blogMVC/current/REVISION 2>/dev/null as deploy@oipnet.info
+ DEBUG [62c29f0d] Command: /usr/bin/env cat /var/www/blogMVC/current/REVISION 2>/dev/null
+ DEBUG [77126d43] 	bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843
+ DEBUG [77126d43] Finished in 0.157 seconds with exit status 0 (successful).
+ DEBUG [4532bb37] Running [ -f /var/www/blogMVC/repo/HEAD ] as deploy@oipnet.info
+ DEBUG [4532bb37] Command: [ -f /var/www/blogMVC/repo/HEAD ]
+ DEBUG [34cf2060] Finished in 0.152 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/blogMVC/repo
+ DEBUG [f1f5fd9d] Running if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [f1f5fd9d] Command: if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi
+ DEBUG [09cb6064] Finished in 0.157 seconds with exit status 0 (successful).
+  INFO [aa55e083] Running /usr/bin/env git remote set-url origin git@github.com:Oipnet/blogMvc.git as deploy@oipnet.info
+ DEBUG [aa55e083] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git remote set-url origin git@github.com:Oipnet/blogMvc.git )
+  INFO [77122b94] Finished in 0.171 seconds with exit status 0 (successful).
+  INFO [a6d23574] Running /usr/bin/env git remote update --prune as deploy@oipnet.info
+ DEBUG [a6d23574] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [9b27be3a] 	Fetching origin
+  INFO [9b27be3a] Finished in 1.412 seconds with exit status 0 (successful).
+ DEBUG [944da6a3] Running if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [944da6a3] Command: if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi
+ DEBUG [60d4b5dd] Finished in 0.114 seconds with exit status 0 (successful).
+  INFO [96336e48] Running /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816143917 as deploy@oipnet.info
+ DEBUG [96336e48] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816143917 )
+  INFO [e7c698f4] Finished in 0.171 seconds with exit status 0 (successful).
+  INFO [9657fb03] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/blogMVC/releases/20180816143917 as deploy@oipnet.info
+ DEBUG [9657fb03] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/blogMVC/releases/20180816143917 )
+  INFO [81cf5172] Finished in 0.171 seconds with exit status 0 (successful).
+ DEBUG [f71dfcfa] Running if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [f71dfcfa] Command: if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi
+ DEBUG [5c1495ab] Finished in 0.153 seconds with exit status 0 (successful).
+ DEBUG [616cb3e0] Running /usr/bin/env git rev-list --max-count=1 master as deploy@oipnet.info
+ DEBUG [616cb3e0] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [de2fbb01] 	bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843
+ DEBUG [de2fbb01] Finished in 0.159 seconds with exit status 0 (successful).
+ DEBUG [255454c5] Running if test ! -d /var/www/blogMVC/releases/20180816143917; then echo "Directory does not exist '/var/www/blogMVC/releases/20180816143917'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [255454c5] Command: if test ! -d /var/www/blogMVC/releases/20180816143917; then echo "Directory does not exist '/var/www/blogMVC/releases/20180816143917'" 1>&2; false; fi
+ DEBUG [7b3b075c] Finished in 0.158 seconds with exit status 0 (successful).
+  INFO [3985d5b9] Running /usr/bin/env echo "bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843" > REVISION as deploy@oipnet.info
+ DEBUG [3985d5b9] Command: cd /var/www/blogMVC/releases/20180816143917 && /usr/bin/env echo "bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843" > REVISION
+  INFO [7566466d] Finished in 0.158 seconds with exit status 0 (successful).
+  INFO [cea5be54] Running /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816143917/var as deploy@oipnet.info
+ DEBUG [cea5be54] Command: /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816143917/var
+  INFO [7417bf14] Finished in 0.166 seconds with exit status 0 (successful).
+ DEBUG [fd1ef2b4] Running [ -L /var/www/blogMVC/releases/20180816143917/var/cache ] as deploy@oipnet.info
+ DEBUG [fd1ef2b4] Command: [ -L /var/www/blogMVC/releases/20180816143917/var/cache ]
+ DEBUG [6a24a1b7] Finished in 0.157 seconds with exit status 1 (failed).
+ DEBUG [bf387573] Running [ -d /var/www/blogMVC/releases/20180816143917/var/cache ] as deploy@oipnet.info
+ DEBUG [bf387573] Command: [ -d /var/www/blogMVC/releases/20180816143917/var/cache ]
+ DEBUG [6e0fa56a] Finished in 0.158 seconds with exit status 1 (failed).
+  INFO [01eddac2] Running /usr/bin/env ln -s /var/www/blogMVC/shared/var/cache /var/www/blogMVC/releases/20180816143917/var/cache as deploy@oipnet.info
+ DEBUG [01eddac2] Command: /usr/bin/env ln -s /var/www/blogMVC/shared/var/cache /var/www/blogMVC/releases/20180816143917/var/cache
+  INFO [b370d443] Finished in 0.156 seconds with exit status 0 (successful).
+ DEBUG [0f817a36] Running if test ! -d /var/www/blogMVC/releases/20180816143917; then echo "Directory does not exist '/var/www/blogMVC/releases/20180816143917'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [0f817a36] Command: if test ! -d /var/www/blogMVC/releases/20180816143917; then echo "Directory does not exist '/var/www/blogMVC/releases/20180816143917'" 1>&2; false; fi
+ DEBUG [759bc26d] Finished in 0.158 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-08-16 16:40:34 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [4cbbf984] Running /usr/bin/env mkdir -p /tmp as deploy@oipnet.info
+ DEBUG [4cbbf984] Command: /usr/bin/env mkdir -p /tmp
+  INFO [6e5a12bb] Finished in 1.030 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-BlogMVC-production-arnaud.sh 0.0%
+  INFO Uploading /tmp/git-ssh-BlogMVC-production-arnaud.sh 100.0%
+  INFO [52bda074] Running /usr/bin/env chmod 700 /tmp/git-ssh-BlogMVC-production-arnaud.sh as deploy@oipnet.info
+ DEBUG [52bda074] Command: /usr/bin/env chmod 700 /tmp/git-ssh-BlogMVC-production-arnaud.sh
+  INFO [29ff1abd] Finished in 0.160 seconds with exit status 0 (successful).
+  INFO [8c6a7f04] Running /usr/bin/env git ls-remote git@github.com:Oipnet/blogMvc.git HEAD as deploy@oipnet.info
+ DEBUG [8c6a7f04] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git ls-remote git@github.com:Oipnet/blogMvc.git HEAD )
+ DEBUG [a0166d7a] 	bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843	HEAD
+  INFO [a0166d7a] Finished in 1.582 seconds with exit status 0 (successful).
+  INFO [b77a7a15] Running /usr/bin/env mkdir -p /var/www/blogMVC/shared /var/www/blogMVC/releases as deploy@oipnet.info
+ DEBUG [b77a7a15] Command: /usr/bin/env mkdir -p /var/www/blogMVC/shared /var/www/blogMVC/releases
+  INFO [390bfbbc] Finished in 0.121 seconds with exit status 0 (successful).
+  INFO [3882840d] Running /usr/bin/env mkdir -p /var/www/blogMVC/shared/var/cache as deploy@oipnet.info
+ DEBUG [3882840d] Command: /usr/bin/env mkdir -p /var/www/blogMVC/shared/var/cache
+  INFO [d51bd75e] Finished in 0.157 seconds with exit status 0 (successful).
+ DEBUG [972dad2a] Running [ -f /var/www/blogMVC/current/REVISION ] as deploy@oipnet.info
+ DEBUG [972dad2a] Command: [ -f /var/www/blogMVC/current/REVISION ]
+ DEBUG [f74b4800] Finished in 0.158 seconds with exit status 0 (successful).
+ DEBUG [ad1b0685] Running /usr/bin/env cat /var/www/blogMVC/current/REVISION 2>/dev/null as deploy@oipnet.info
+ DEBUG [ad1b0685] Command: /usr/bin/env cat /var/www/blogMVC/current/REVISION 2>/dev/null
+ DEBUG [35d461a3] 	bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843
+ DEBUG [35d461a3] Finished in 0.160 seconds with exit status 0 (successful).
+ DEBUG [6f9b59f1] Running [ -f /var/www/blogMVC/repo/HEAD ] as deploy@oipnet.info
+ DEBUG [6f9b59f1] Command: [ -f /var/www/blogMVC/repo/HEAD ]
+ DEBUG [6f60ae22] Finished in 0.158 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/blogMVC/repo
+ DEBUG [ef2d0df3] Running if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [ef2d0df3] Command: if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi
+ DEBUG [4b4165b7] Finished in 0.159 seconds with exit status 0 (successful).
+  INFO [f75f49d9] Running /usr/bin/env git remote set-url origin git@github.com:Oipnet/blogMvc.git as deploy@oipnet.info
+ DEBUG [f75f49d9] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git remote set-url origin git@github.com:Oipnet/blogMvc.git )
+  INFO [b6cf7b26] Finished in 0.171 seconds with exit status 0 (successful).
+  INFO [974f6c81] Running /usr/bin/env git remote update --prune as deploy@oipnet.info
+ DEBUG [974f6c81] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [651b6881] 	Fetching origin
+  INFO [651b6881] Finished in 1.437 seconds with exit status 0 (successful).
+ DEBUG [015a5dbd] Running if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [015a5dbd] Command: if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi
+ DEBUG [18b99926] Finished in 0.116 seconds with exit status 0 (successful).
+  INFO [bb263678] Running /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816144038 as deploy@oipnet.info
+ DEBUG [bb263678] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816144038 )
+  INFO [500d4697] Finished in 0.158 seconds with exit status 0 (successful).
+  INFO [a6a17e16] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/blogMVC/releases/20180816144038 as deploy@oipnet.info
+ DEBUG [a6a17e16] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/blogMVC/releases/20180816144038 )
+  INFO [5a77254c] Finished in 0.193 seconds with exit status 0 (successful).
+ DEBUG [320cdbb1] Running if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [320cdbb1] Command: if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi
+ DEBUG [f348fc00] Finished in 0.155 seconds with exit status 0 (successful).
+ DEBUG [28f8267c] Running /usr/bin/env git rev-list --max-count=1 master as deploy@oipnet.info
+ DEBUG [28f8267c] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [a5a26b34] 	bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843
+ DEBUG [a5a26b34] Finished in 0.160 seconds with exit status 0 (successful).
+ DEBUG [647e562b] Running if test ! -d /var/www/blogMVC/releases/20180816144038; then echo "Directory does not exist '/var/www/blogMVC/releases/20180816144038'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [647e562b] Command: if test ! -d /var/www/blogMVC/releases/20180816144038; then echo "Directory does not exist '/var/www/blogMVC/releases/20180816144038'" 1>&2; false; fi
+ DEBUG [f1fdd51c] Finished in 0.156 seconds with exit status 0 (successful).
+  INFO [b220a425] Running /usr/bin/env echo "bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843" > REVISION as deploy@oipnet.info
+ DEBUG [b220a425] Command: cd /var/www/blogMVC/releases/20180816144038 && /usr/bin/env echo "bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843" > REVISION
+  INFO [0855dee7] Finished in 0.161 seconds with exit status 0 (successful).
+  INFO [c1511896] Running /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816144038/var as deploy@oipnet.info
+ DEBUG [c1511896] Command: /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816144038/var
+  INFO [dde1da24] Finished in 0.157 seconds with exit status 0 (successful).
+ DEBUG [1cdc5a78] Running [ -L /var/www/blogMVC/releases/20180816144038/var/cache ] as deploy@oipnet.info
+ DEBUG [1cdc5a78] Command: [ -L /var/www/blogMVC/releases/20180816144038/var/cache ]
+ DEBUG [9212a785] Finished in 0.156 seconds with exit status 1 (failed).
+ DEBUG [8267887f] Running [ -d /var/www/blogMVC/releases/20180816144038/var/cache ] as deploy@oipnet.info
+ DEBUG [8267887f] Command: [ -d /var/www/blogMVC/releases/20180816144038/var/cache ]
+ DEBUG [8ffea72c] Finished in 0.158 seconds with exit status 1 (failed).
+  INFO [f1c0ae84] Running /usr/bin/env ln -s /var/www/blogMVC/shared/var/cache /var/www/blogMVC/releases/20180816144038/var/cache as deploy@oipnet.info
+ DEBUG [f1c0ae84] Command: /usr/bin/env ln -s /var/www/blogMVC/shared/var/cache /var/www/blogMVC/releases/20180816144038/var/cache
+  INFO [487efd8c] Finished in 0.161 seconds with exit status 0 (successful).
+ DEBUG [6a82cb78] Running if test ! -d /var/www/blogMVC/releases/20180816144038; then echo "Directory does not exist '/var/www/blogMVC/releases/20180816144038'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [6a82cb78] Command: if test ! -d /var/www/blogMVC/releases/20180816144038; then echo "Directory does not exist '/var/www/blogMVC/releases/20180816144038'" 1>&2; false; fi
+ DEBUG [cfb72d97] Finished in 0.156 seconds with exit status 0 (successful).
+  INFO [d339f55a] Running /usr/bin/env composer install --optimize-autoloader as deploy@oipnet.info
+ DEBUG [d339f55a] Command: cd /var/www/blogMVC/releases/20180816144038 && /usr/bin/env composer install --optimize-autoloader
+ DEBUG [68ffd350] 	Loading composer repositories with package information
+ DEBUG [68ffd350] 	
+ DEBUG [68ffd350] 	Installing dependencies (including require-dev) from lock file
+ DEBUG [68ffd350] 	
+ DEBUG [68ffd350] 	Package operations: 4 installs, 0 updates, 0 removals
+ DEBUG [68ffd350] 	
+ DEBUG [68ffd350] 	  - Installing psr/http-message (1.0.1): 
+ DEBUG [68ffd350] 	Loading from cache
+ DEBUG [68ffd350] 	
+ DEBUG [68ffd350] 	  - Installing symfony/polyfill-mbstring (v1.9.0): 
+ DEBUG [68ffd350] 	Loading from cache
+ DEBUG [68ffd350] 	
+ DEBUG [68ffd350] 	  - Installing symfony/polyfill-ctype (v1.9.0): 
+ DEBUG [68ffd350] 	Loading from cache
+ DEBUG [68ffd350] 	
+ DEBUG [68ffd350] 	  - Installing twig/twig (v2.5.0): 
+ DEBUG [68ffd350] 	Loading from cache
+ DEBUG [68ffd350] 	
+ DEBUG [68ffd350] 	Generating optimized autoload files
+ DEBUG [68ffd350] 	
+  INFO [68ffd350] Finished in 1.314 seconds with exit status 0 (successful).
+  INFO [ac301dbc] Running /usr/bin/env ln -s /var/www/blogMVC/releases/20180816144038 /var/www/blogMVC/releases/current as deploy@oipnet.info
+ DEBUG [ac301dbc] Command: /usr/bin/env ln -s /var/www/blogMVC/releases/20180816144038 /var/www/blogMVC/releases/current
+  INFO [35043498] Finished in 0.155 seconds with exit status 0 (successful).
+  INFO [ddac595d] Running /usr/bin/env mv /var/www/blogMVC/releases/current /var/www/blogMVC as deploy@oipnet.info
+ DEBUG [ddac595d] Command: /usr/bin/env mv /var/www/blogMVC/releases/current /var/www/blogMVC
+  INFO [acc1fb0b] Finished in 0.160 seconds with exit status 0 (successful).
+ DEBUG [40931dc9] Running /usr/bin/env ls -x /var/www/blogMVC/releases as deploy@oipnet.info
+ DEBUG [40931dc9] Command: /usr/bin/env ls -x /var/www/blogMVC/releases
+ DEBUG [eaff6bfe] 	20180816142938	20180816143255	20180816143354	20180816143415	20180816143717
+20180816143917	20180816144038
+ DEBUG [eaff6bfe] Finished in 0.159 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 7 deployed releases on oipnet.info
+ DEBUG [c80a506c] Running [ -d /var/www/blogMVC/current ] as deploy@oipnet.info
+ DEBUG [c80a506c] Command: [ -d /var/www/blogMVC/current ]
+ DEBUG [1d189fae] Finished in 0.153 seconds with exit status 0 (successful).
+ DEBUG [acf344f6] Running /usr/bin/env readlink /var/www/blogMVC/current as deploy@oipnet.info
+ DEBUG [acf344f6] Command: /usr/bin/env readlink /var/www/blogMVC/current
+ DEBUG [8c8cd91c] 	/var/www/blogMVC/releases/20180816144038
+ DEBUG [8c8cd91c] Finished in 0.160 seconds with exit status 0 (successful).
+  INFO [0f93ad69] Running /usr/bin/env rm -rf /var/www/blogMVC/releases/20180816142938 /var/www/blogMVC/releases/20180816143255 as deploy@oipnet.info
+ DEBUG [0f93ad69] Command: /usr/bin/env rm -rf /var/www/blogMVC/releases/20180816142938 /var/www/blogMVC/releases/20180816143255
+  INFO [b2a0f445] Finished in 0.164 seconds with exit status 0 (successful).
+ DEBUG [d043ae60] Running if test ! -d /var/www/blogMVC/releases; then echo "Directory does not exist '/var/www/blogMVC/releases'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [d043ae60] Command: if test ! -d /var/www/blogMVC/releases; then echo "Directory does not exist '/var/www/blogMVC/releases'" 1>&2; false; fi
+ DEBUG [9decbb7a] Finished in 0.153 seconds with exit status 0 (successful).
+  INFO [1373bc71] Running /usr/bin/env echo "Branch master (at bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843) deployed as release 20180816144038 by arnaud" >> /var/www/blogMVC/revisions.log as deploy@oipnet.info
+ DEBUG [1373bc71] Command: cd /var/www/blogMVC/releases && /usr/bin/env echo "Branch master (at bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843) deployed as release 20180816144038 by arnaud" >> /var/www/blogMVC/revisions.log
+  INFO [9c2b501c] Finished in 0.158 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-08-16 16:57:05 +0200 cap production nginx:conf
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-08-16 16:57:28 +0200 cap production nginx:conf
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-08-16 16:57:58 +0200 cap production nginx:conf
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-08-16 16:58:14 +0200 cap production nginx:conf
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-08-16 17:07:51 +0200 cap production nginx:conf
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-08-16 17:08:43 +0200 cap production nginx:conf
+  INFO ---------------------------------------------------------------------------
+  INFO [f3373148] Running /usr/bin/env #<StringIO:0x000055b3c3830f78> /tmp/nginx_blogmvc.oipnet.info.conf as deploy@oipnet.info
+ DEBUG [f3373148] Command: /usr/bin/env #<StringIO:0x000055b3c3830f78> /tmp/nginx_blogmvc.oipnet.info.conf
+  INFO [76df7918] Running /usr/bin/env sudo mv config_file /etc/nginx/sites-avaible/blogmvc.oipnet.info.conf as deploy@oipnet.info
+ DEBUG [76df7918] Command: /usr/bin/env sudo mv config_file /etc/nginx/sites-avaible/blogmvc.oipnet.info.conf
+  INFO [d189e970] Running /usr/bin/env sudo ls -fs /etc/nginx/sites-avaible/blogmvc.oipnet.info.conf /etc/nginx/sites-enabled/blogmvc.oipnet.info.conf as deploy@oipnet.info
+ DEBUG [d189e970] Command: /usr/bin/env sudo ls -fs /etc/nginx/sites-avaible/blogmvc.oipnet.info.conf /etc/nginx/sites-enabled/blogmvc.oipnet.info.conf
+  INFO [8ec8f73d] Running /usr/bin/env sudo service nginx restart as deploy@oipnet.info
+ DEBUG [8ec8f73d] Command: /usr/bin/env sudo service nginx restart
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-08-16 17:08:53 +0200 cap production nginx:conf
+  INFO ---------------------------------------------------------------------------
+ DEBUG Uploading /tmp/nginx_blogmvc.oipnet.info.conf 0.0%
+  INFO Uploading /tmp/nginx_blogmvc.oipnet.info.conf 100.0%
+  INFO [3742d351] Running /usr/bin/env sudo mv config_file /etc/nginx/sites-avaible/blogmvc.oipnet.info.conf as deploy@oipnet.info
+ DEBUG [3742d351] Command: /usr/bin/env sudo mv config_file /etc/nginx/sites-avaible/blogmvc.oipnet.info.conf
+ DEBUG [08e6e9f0] 	mv: 
+ DEBUG [08e6e9f0] 	cannot stat 'config_file'
+ DEBUG [08e6e9f0] 	: No such file or directory
+ DEBUG [08e6e9f0] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-08-16 17:11:00 +0200 cap production nginx:conf
+  INFO ---------------------------------------------------------------------------
+ DEBUG Uploading /tmp/nginx_blogmvc.oipnet.info.conf 0.0%
+  INFO Uploading /tmp/nginx_blogmvc.oipnet.info.conf 100.0%
+  INFO [8f4d053e] Running /usr/bin/env sudo mv /tmp/nginx_blogmvc.oipnet.info.conf /etc/nginx/sites-avaible/blogmvc.oipnet.info.conf as deploy@oipnet.info
+ DEBUG [8f4d053e] Command: /usr/bin/env sudo mv /tmp/nginx_blogmvc.oipnet.info.conf /etc/nginx/sites-avaible/blogmvc.oipnet.info.conf
+ DEBUG [adb77667] 	mv: 
+ DEBUG [adb77667] 	cannot move '/tmp/nginx_blogmvc.oipnet.info.conf' to '/etc/nginx/sites-avaible/blogmvc.oipnet.info.conf'
+ DEBUG [adb77667] 	: No such file or directory
+ DEBUG [adb77667] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-08-16 17:11:39 +0200 cap production nginx:conf
+  INFO ---------------------------------------------------------------------------
+ DEBUG Uploading /tmp/nginx_blogmvc.oipnet.info.conf 0.0%
+  INFO Uploading /tmp/nginx_blogmvc.oipnet.info.conf 100.0%
+  INFO [4fe30755] Running /usr/bin/env sudo mv /tmp/nginx_blogmvc.oipnet.info.conf /etc/nginx/sites-available/blogmvc.oipnet.info.conf as deploy@oipnet.info
+ DEBUG [4fe30755] Command: /usr/bin/env sudo mv /tmp/nginx_blogmvc.oipnet.info.conf /etc/nginx/sites-available/blogmvc.oipnet.info.conf
+  INFO [7acf8001] Finished in 0.187 seconds with exit status 0 (successful).
+  INFO [1a250989] Running /usr/bin/env sudo ls -fs /etc/nginx/sites-available/blogmvc.oipnet.info.conf /etc/nginx/sites-enabled/blogmvc.oipnet.info.conf as deploy@oipnet.info
+ DEBUG [1a250989] Command: /usr/bin/env sudo ls -fs /etc/nginx/sites-available/blogmvc.oipnet.info.conf /etc/nginx/sites-enabled/blogmvc.oipnet.info.conf
+ DEBUG [55dadf64] 	ls: 
+ DEBUG [55dadf64] 	cannot access '/etc/nginx/sites-enabled/blogmvc.oipnet.info.conf'
+ DEBUG [55dadf64] 	: No such file or directory
+ DEBUG [55dadf64] 	
+ DEBUG [55dadf64] 	4 /etc/nginx/sites-available/blogmvc.oipnet.info.conf
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-08-16 17:12:49 +0200 cap production nginx:conf
+  INFO ---------------------------------------------------------------------------
+ DEBUG Uploading /tmp/nginx_blogmvc.oipnet.info.conf 0.0%
+  INFO Uploading /tmp/nginx_blogmvc.oipnet.info.conf 100.0%
+  INFO [aab78c44] Running /usr/bin/env sudo mv /tmp/nginx_blogmvc.oipnet.info.conf /etc/nginx/sites-available/blogmvc.oipnet.info.conf as deploy@oipnet.info
+ DEBUG [aab78c44] Command: /usr/bin/env sudo mv /tmp/nginx_blogmvc.oipnet.info.conf /etc/nginx/sites-available/blogmvc.oipnet.info.conf
+  INFO [4c261f7b] Finished in 0.201 seconds with exit status 0 (successful).
+  INFO [8f0ee25c] Running /usr/bin/env sudo ls -fs /etc/nginx/sites-available/blogmvc.oipnet.info.conf /etc/nginx/sites-enabled/ as deploy@oipnet.info
+ DEBUG [8f0ee25c] Command: /usr/bin/env sudo ls -fs /etc/nginx/sites-available/blogmvc.oipnet.info.conf /etc/nginx/sites-enabled/
+ DEBUG [eebdd24b] 	4 /etc/nginx/sites-available/blogmvc.oipnet.info.conf
+
+/etc/nginx/sites-enabled/:
+total 8
+0 portfolio-v2.oipnet.info.conf
+0 oipnet.info.conf
+0 chat.oipnet.info
+0 stats.oipnet.info
+0 lets-encrypt.conf
+0 mini-blog.oipnet.conf
+0 easycapital.oipnet.info.conf
+0 admin.oipnet.info
+4 .
+0 egerie.oipnet.info
+0 demo.oipnet.info
+0 efkha.oipnet.info
+0 vrmt.oipnet.info
+0 cartes.oipnet.info
+0 rozea.oipnet.conf
+4 ..
+0 api.oipnet.info.conf
+  INFO [eebdd24b] Finished in 0.182 seconds with exit status 0 (successful).
+  INFO [fc8e6e33] Running /usr/bin/env sudo service nginx restart as deploy@oipnet.info
+ DEBUG [fc8e6e33] Command: /usr/bin/env sudo service nginx restart
+  INFO [1216cf60] Finished in 0.487 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-08-16 17:13:33 +0200 cap production nginx:conf
+  INFO ---------------------------------------------------------------------------
+ DEBUG Uploading /tmp/nginx_blogmvc.oipnet.info.conf 0.0%
+  INFO Uploading /tmp/nginx_blogmvc.oipnet.info.conf 100.0%
+  INFO [638543c5] Running /usr/bin/env sudo mv /tmp/nginx_blogmvc.oipnet.info.conf /etc/nginx/sites-available/blogmvc.oipnet.info.conf as deploy@oipnet.info
+ DEBUG [638543c5] Command: /usr/bin/env sudo mv /tmp/nginx_blogmvc.oipnet.info.conf /etc/nginx/sites-available/blogmvc.oipnet.info.conf
+  INFO [3cde2aea] Finished in 0.186 seconds with exit status 0 (successful).
+  INFO [a72e18e1] Running /usr/bin/env sudo ln -fs /etc/nginx/sites-available/blogmvc.oipnet.info.conf /etc/nginx/sites-enabled/blogmvc.oipnet.info.conf as deploy@oipnet.info
+ DEBUG [a72e18e1] Command: /usr/bin/env sudo ln -fs /etc/nginx/sites-available/blogmvc.oipnet.info.conf /etc/nginx/sites-enabled/blogmvc.oipnet.info.conf
+  INFO [67513275] Finished in 0.236 seconds with exit status 0 (successful).
+  INFO [99fe6dbc] Running /usr/bin/env sudo service nginx restart as deploy@oipnet.info
+ DEBUG [99fe6dbc] Command: /usr/bin/env sudo service nginx restart
+  INFO [4d576560] Finished in 0.387 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-08-16 17:16:32 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [35c6880e] Running /usr/bin/env mkdir -p /tmp as deploy@oipnet.info
+ DEBUG [35c6880e] Command: /usr/bin/env mkdir -p /tmp
+  INFO [7ab58bf8] Finished in 0.911 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-BlogMVC-production-arnaud.sh 0.0%
+  INFO Uploading /tmp/git-ssh-BlogMVC-production-arnaud.sh 100.0%
+  INFO [4f53d6cf] Running /usr/bin/env chmod 700 /tmp/git-ssh-BlogMVC-production-arnaud.sh as deploy@oipnet.info
+ DEBUG [4f53d6cf] Command: /usr/bin/env chmod 700 /tmp/git-ssh-BlogMVC-production-arnaud.sh
+  INFO [d89e61d7] Finished in 0.159 seconds with exit status 0 (successful).
+  INFO [7d377ce5] Running /usr/bin/env git ls-remote git@github.com:Oipnet/blogMvc.git HEAD as deploy@oipnet.info
+ DEBUG [7d377ce5] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git ls-remote git@github.com:Oipnet/blogMvc.git HEAD )
+ DEBUG [1abd7072] 	bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843	HEAD
+  INFO [1abd7072] Finished in 1.428 seconds with exit status 0 (successful).
+  INFO [ee6ea9ec] Running /usr/bin/env mkdir -p /var/www/blogMVC/shared /var/www/blogMVC/releases as deploy@oipnet.info
+ DEBUG [ee6ea9ec] Command: /usr/bin/env mkdir -p /var/www/blogMVC/shared /var/www/blogMVC/releases
+  INFO [d429f754] Finished in 0.118 seconds with exit status 0 (successful).
+  INFO [36385388] Running /usr/bin/env mkdir -p /var/www/blogMVC/shared/var/cache as deploy@oipnet.info
+ DEBUG [36385388] Command: /usr/bin/env mkdir -p /var/www/blogMVC/shared/var/cache
+  INFO [85b854ee] Finished in 0.164 seconds with exit status 0 (successful).
+ DEBUG [6a805bf6] Running [ -f /var/www/blogMVC/current/REVISION ] as deploy@oipnet.info
+ DEBUG [6a805bf6] Command: [ -f /var/www/blogMVC/current/REVISION ]
+ DEBUG [09707d2c] Finished in 0.157 seconds with exit status 0 (successful).
+ DEBUG [d934e70a] Running /usr/bin/env cat /var/www/blogMVC/current/REVISION 2>/dev/null as deploy@oipnet.info
+ DEBUG [d934e70a] Command: /usr/bin/env cat /var/www/blogMVC/current/REVISION 2>/dev/null
+ DEBUG [e53cfd2e] 	bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843
+ DEBUG [e53cfd2e] Finished in 0.157 seconds with exit status 0 (successful).
+ DEBUG [6757ea3c] Running [ -f /var/www/blogMVC/repo/HEAD ] as deploy@oipnet.info
+ DEBUG [6757ea3c] Command: [ -f /var/www/blogMVC/repo/HEAD ]
+ DEBUG [faf9a179] Finished in 0.156 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/blogMVC/repo
+ DEBUG [1c0f521c] Running if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [1c0f521c] Command: if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi
+ DEBUG [666a5928] Finished in 0.155 seconds with exit status 0 (successful).
+  INFO [aa76bb11] Running /usr/bin/env git remote set-url origin git@github.com:Oipnet/blogMvc.git as deploy@oipnet.info
+ DEBUG [aa76bb11] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git remote set-url origin git@github.com:Oipnet/blogMvc.git )
+  INFO [6717ef4f] Finished in 0.166 seconds with exit status 0 (successful).
+  INFO [f3dc0e92] Running /usr/bin/env git remote update --prune as deploy@oipnet.info
+ DEBUG [f3dc0e92] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [885d614e] 	Fetching origin
+  INFO [885d614e] Finished in 1.431 seconds with exit status 0 (successful).
+ DEBUG [a29e6d32] Running if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [a29e6d32] Command: if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi
+ DEBUG [3de9d2de] Finished in 0.113 seconds with exit status 0 (successful).
+  INFO [6e872445] Running /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816151636 as deploy@oipnet.info
+ DEBUG [6e872445] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816151636 )
+  INFO [c7248f9d] Finished in 0.167 seconds with exit status 0 (successful).
+  INFO [4f96166f] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/blogMVC/releases/20180816151636 as deploy@oipnet.info
+ DEBUG [4f96166f] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/blogMVC/releases/20180816151636 )
+  INFO [d2e20f0d] Finished in 0.167 seconds with exit status 0 (successful).
+ DEBUG [a5e5b1c7] Running if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [a5e5b1c7] Command: if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi
+ DEBUG [f74917ed] Finished in 0.155 seconds with exit status 0 (successful).
+ DEBUG [c82e7349] Running /usr/bin/env git rev-list --max-count=1 master as deploy@oipnet.info
+ DEBUG [c82e7349] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [234b1093] 	bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843
+ DEBUG [234b1093] Finished in 0.159 seconds with exit status 0 (successful).
+ DEBUG [81f21729] Running if test ! -d /var/www/blogMVC/releases/20180816151636; then echo "Directory does not exist '/var/www/blogMVC/releases/20180816151636'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [81f21729] Command: if test ! -d /var/www/blogMVC/releases/20180816151636; then echo "Directory does not exist '/var/www/blogMVC/releases/20180816151636'" 1>&2; false; fi
+ DEBUG [e58f0f23] Finished in 0.156 seconds with exit status 0 (successful).
+  INFO [b67b27f5] Running /usr/bin/env echo "bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843" > REVISION as deploy@oipnet.info
+ DEBUG [b67b27f5] Command: cd /var/www/blogMVC/releases/20180816151636 && /usr/bin/env echo "bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843" > REVISION
+  INFO [bbe7d5ed] Finished in 0.159 seconds with exit status 0 (successful).
+  INFO [771b5cba] Running /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816151636/var as deploy@oipnet.info
+ DEBUG [771b5cba] Command: /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816151636/var
+  INFO [afb6b994] Finished in 0.157 seconds with exit status 0 (successful).
+ DEBUG [6bce3097] Running [ -L /var/www/blogMVC/releases/20180816151636/var/cache ] as deploy@oipnet.info
+ DEBUG [6bce3097] Command: [ -L /var/www/blogMVC/releases/20180816151636/var/cache ]
+ DEBUG [0e340b9b] Finished in 0.158 seconds with exit status 1 (failed).
+ DEBUG [8295f1d1] Running [ -d /var/www/blogMVC/releases/20180816151636/var/cache ] as deploy@oipnet.info
+ DEBUG [8295f1d1] Command: [ -d /var/www/blogMVC/releases/20180816151636/var/cache ]
+ DEBUG [de393c65] Finished in 0.159 seconds with exit status 1 (failed).
+  INFO [c1264439] Running /usr/bin/env ln -s /var/www/blogMVC/shared/var/cache /var/www/blogMVC/releases/20180816151636/var/cache as deploy@oipnet.info
+ DEBUG [c1264439] Command: /usr/bin/env ln -s /var/www/blogMVC/shared/var/cache /var/www/blogMVC/releases/20180816151636/var/cache
+  INFO [80d07a09] Finished in 0.156 seconds with exit status 0 (successful).
+ DEBUG [9e1fd77e] Running if test ! -d /var/www/blogMVC/releases/20180816151636; then echo "Directory does not exist '/var/www/blogMVC/releases/20180816151636'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [9e1fd77e] Command: if test ! -d /var/www/blogMVC/releases/20180816151636; then echo "Directory does not exist '/var/www/blogMVC/releases/20180816151636'" 1>&2; false; fi
+ DEBUG [99a57a2a] Finished in 0.157 seconds with exit status 0 (successful).
+  INFO [ea5cd399] Running /usr/bin/env composer install --optimize-autoloader as deploy@oipnet.info
+ DEBUG [ea5cd399] Command: cd /var/www/blogMVC/releases/20180816151636 && /usr/bin/env composer install --optimize-autoloader
+ DEBUG [f7c01667] 	Loading composer repositories with package information
+ DEBUG [f7c01667] 	
+ DEBUG [f7c01667] 	Installing dependencies (including require-dev) from lock file
+ DEBUG [f7c01667] 	
+ DEBUG [f7c01667] 	Package operations: 4 installs, 0 updates, 0 removals
+ DEBUG [f7c01667] 	
+ DEBUG [f7c01667] 	  - Installing psr/http-message (1.0.1): 
+ DEBUG [f7c01667] 	Loading from cache
+ DEBUG [f7c01667] 	
+ DEBUG [f7c01667] 	  - Installing symfony/polyfill-mbstring (v1.9.0): Loading from cache
+ DEBUG [f7c01667] 	  - Installing symfony/polyfill-ctype (v1.9.0): Loading from cache
+ DEBUG [f7c01667] 	  - Installing twig/twig (v2.5.0): Loading from cache
+ DEBUG [f7c01667] 	Generating optimized autoload files
+ DEBUG [f7c01667] 	
+  INFO [f7c01667] Finished in 1.369 seconds with exit status 0 (successful).
+  INFO [9cdac02f] Running /usr/bin/env ln -s /var/www/blogMVC/releases/20180816151636 /var/www/blogMVC/releases/current as deploy@oipnet.info
+ DEBUG [9cdac02f] Command: /usr/bin/env ln -s /var/www/blogMVC/releases/20180816151636 /var/www/blogMVC/releases/current
+  INFO [564179da] Finished in 0.156 seconds with exit status 0 (successful).
+  INFO [69262fd4] Running /usr/bin/env mv /var/www/blogMVC/releases/current /var/www/blogMVC as deploy@oipnet.info
+ DEBUG [69262fd4] Command: /usr/bin/env mv /var/www/blogMVC/releases/current /var/www/blogMVC
+  INFO [033d34f9] Finished in 0.157 seconds with exit status 0 (successful).
+ DEBUG [dd0971ee] Running /usr/bin/env ls -x /var/www/blogMVC/releases as deploy@oipnet.info
+ DEBUG [dd0971ee] Command: /usr/bin/env ls -x /var/www/blogMVC/releases
+ DEBUG [89974a9f] 	20180816143354	20180816143415	20180816143717	20180816143917	20180816144038
+20180816151636
+ DEBUG [89974a9f] Finished in 0.157 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on oipnet.info
+ DEBUG [3cccc3d5] Running [ -d /var/www/blogMVC/current ] as deploy@oipnet.info
+ DEBUG [3cccc3d5] Command: [ -d /var/www/blogMVC/current ]
+ DEBUG [ae0f6d71] Finished in 0.156 seconds with exit status 0 (successful).
+ DEBUG [ffbac7b7] Running /usr/bin/env readlink /var/www/blogMVC/current as deploy@oipnet.info
+ DEBUG [ffbac7b7] Command: /usr/bin/env readlink /var/www/blogMVC/current
+ DEBUG [a1d95a16] 	/var/www/blogMVC/releases/20180816151636
+ DEBUG [a1d95a16] Finished in 0.159 seconds with exit status 0 (successful).
+  INFO [5f97f95f] Running /usr/bin/env rm -rf /var/www/blogMVC/releases/20180816143354 as deploy@oipnet.info
+ DEBUG [5f97f95f] Command: /usr/bin/env rm -rf /var/www/blogMVC/releases/20180816143354
+  INFO [b0b1bf8a] Finished in 0.163 seconds with exit status 0 (successful).
+ DEBUG [6bef6fb5] Running if test ! -d /var/www/blogMVC/releases; then echo "Directory does not exist '/var/www/blogMVC/releases'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [6bef6fb5] Command: if test ! -d /var/www/blogMVC/releases; then echo "Directory does not exist '/var/www/blogMVC/releases'" 1>&2; false; fi
+ DEBUG [d7f814dc] Finished in 0.156 seconds with exit status 0 (successful).
+  INFO [5354c029] Running /usr/bin/env echo "Branch master (at bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843) deployed as release 20180816151636 by arnaud" >> /var/www/blogMVC/revisions.log as deploy@oipnet.info
+ DEBUG [5354c029] Command: cd /var/www/blogMVC/releases && /usr/bin/env echo "Branch master (at bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843) deployed as release 20180816151636 by arnaud" >> /var/www/blogMVC/revisions.log
+  INFO [757ee032] Finished in 0.157 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-08-16 17:17:30 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [39d19fb3] Running /usr/bin/env mkdir -p /tmp as deploy@oipnet.info
+ DEBUG [39d19fb3] Command: /usr/bin/env mkdir -p /tmp
+  INFO [e3bc9488] Finished in 0.866 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-BlogMVC-production-arnaud.sh 0.0%
+  INFO Uploading /tmp/git-ssh-BlogMVC-production-arnaud.sh 100.0%
+  INFO [fe14a827] Running /usr/bin/env chmod 700 /tmp/git-ssh-BlogMVC-production-arnaud.sh as deploy@oipnet.info
+ DEBUG [fe14a827] Command: /usr/bin/env chmod 700 /tmp/git-ssh-BlogMVC-production-arnaud.sh
+  INFO [d4a109de] Finished in 0.161 seconds with exit status 0 (successful).
+  INFO [9ec229cb] Running /usr/bin/env git ls-remote git@github.com:Oipnet/blogMvc.git HEAD as deploy@oipnet.info
+ DEBUG [9ec229cb] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git ls-remote git@github.com:Oipnet/blogMvc.git HEAD )
+ DEBUG [f8703680] 	8e9e3bebf391b8aba49a40bf9b0a92a6a372416f	HEAD
+  INFO [f8703680] Finished in 1.384 seconds with exit status 0 (successful).
+  INFO [9b8ec882] Running /usr/bin/env mkdir -p /var/www/blogMVC/shared /var/www/blogMVC/releases as deploy@oipnet.info
+ DEBUG [9b8ec882] Command: /usr/bin/env mkdir -p /var/www/blogMVC/shared /var/www/blogMVC/releases
+  INFO [fe825326] Finished in 0.118 seconds with exit status 0 (successful).
+  INFO [5f2daca5] Running /usr/bin/env mkdir -p /var/www/blogMVC/shared/var/cache as deploy@oipnet.info
+ DEBUG [5f2daca5] Command: /usr/bin/env mkdir -p /var/www/blogMVC/shared/var/cache
+  INFO [ee671f1d] Finished in 0.164 seconds with exit status 0 (successful).
+ DEBUG [5fabc9d3] Running [ -f /var/www/blogMVC/current/REVISION ] as deploy@oipnet.info
+ DEBUG [5fabc9d3] Command: [ -f /var/www/blogMVC/current/REVISION ]
+ DEBUG [f8f893bd] Finished in 0.157 seconds with exit status 0 (successful).
+ DEBUG [90418b47] Running /usr/bin/env cat /var/www/blogMVC/current/REVISION 2>/dev/null as deploy@oipnet.info
+ DEBUG [90418b47] Command: /usr/bin/env cat /var/www/blogMVC/current/REVISION 2>/dev/null
+ DEBUG [93117862] 	bd1f2fc8e001bcaee1a94607311e4ebfa7d7a843
+ DEBUG [93117862] Finished in 0.157 seconds with exit status 0 (successful).
+ DEBUG [3e06710f] Running [ -f /var/www/blogMVC/repo/HEAD ] as deploy@oipnet.info
+ DEBUG [3e06710f] Command: [ -f /var/www/blogMVC/repo/HEAD ]
+ DEBUG [4970c7eb] Finished in 0.155 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/blogMVC/repo
+ DEBUG [0262cbd9] Running if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [0262cbd9] Command: if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi
+ DEBUG [18bdd630] Finished in 0.155 seconds with exit status 0 (successful).
+  INFO [5e266fd1] Running /usr/bin/env git remote set-url origin git@github.com:Oipnet/blogMvc.git as deploy@oipnet.info
+ DEBUG [5e266fd1] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git remote set-url origin git@github.com:Oipnet/blogMvc.git )
+  INFO [169df760] Finished in 0.162 seconds with exit status 0 (successful).
+  INFO [fc5ab568] Running /usr/bin/env git remote update --prune as deploy@oipnet.info
+ DEBUG [fc5ab568] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [17b5b970] 	Fetching origin
+ DEBUG [17b5b970] 	From github.com:Oipnet/blogMvc
+   bd1f2fc..8e9e3be  master     -> master
+  INFO [17b5b970] Finished in 1.496 seconds with exit status 0 (successful).
+ DEBUG [8ac926ca] Running if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [8ac926ca] Command: if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi
+ DEBUG [0c1a9da8] Finished in 0.108 seconds with exit status 0 (successful).
+  INFO [1d8e9bd3] Running /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816151733 as deploy@oipnet.info
+ DEBUG [1d8e9bd3] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816151733 )
+  INFO [b25c7815] Finished in 0.159 seconds with exit status 0 (successful).
+  INFO [31df3fd7] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/blogMVC/releases/20180816151733 as deploy@oipnet.info
+ DEBUG [31df3fd7] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/blogMVC/releases/20180816151733 )
+  INFO [6c3f88b7] Finished in 0.174 seconds with exit status 0 (successful).
+ DEBUG [c4e17b9c] Running if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [c4e17b9c] Command: if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi
+ DEBUG [161fc2ab] Finished in 0.158 seconds with exit status 0 (successful).
+ DEBUG [ffe8408b] Running /usr/bin/env git rev-list --max-count=1 master as deploy@oipnet.info
+ DEBUG [ffe8408b] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [d533a794] 	8e9e3bebf391b8aba49a40bf9b0a92a6a372416f
+ DEBUG [d533a794] Finished in 0.161 seconds with exit status 0 (successful).
+ DEBUG [dbb92b3f] Running if test ! -d /var/www/blogMVC/releases/20180816151733; then echo "Directory does not exist '/var/www/blogMVC/releases/20180816151733'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [dbb92b3f] Command: if test ! -d /var/www/blogMVC/releases/20180816151733; then echo "Directory does not exist '/var/www/blogMVC/releases/20180816151733'" 1>&2; false; fi
+ DEBUG [509f55b5] Finished in 0.156 seconds with exit status 0 (successful).
+  INFO [87631797] Running /usr/bin/env echo "8e9e3bebf391b8aba49a40bf9b0a92a6a372416f" > REVISION as deploy@oipnet.info
+ DEBUG [87631797] Command: cd /var/www/blogMVC/releases/20180816151733 && /usr/bin/env echo "8e9e3bebf391b8aba49a40bf9b0a92a6a372416f" > REVISION
+  INFO [a1c8bc14] Finished in 0.161 seconds with exit status 0 (successful).
+  INFO [2e4918c7] Running /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816151733/var as deploy@oipnet.info
+ DEBUG [2e4918c7] Command: /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816151733/var
+  INFO [7bd8ef32] Finished in 0.156 seconds with exit status 0 (successful).
+ DEBUG [0a7dd46e] Running [ -L /var/www/blogMVC/releases/20180816151733/var/cache ] as deploy@oipnet.info
+ DEBUG [0a7dd46e] Command: [ -L /var/www/blogMVC/releases/20180816151733/var/cache ]
+ DEBUG [fe4bf0f9] Finished in 0.158 seconds with exit status 1 (failed).
+ DEBUG [9e97b5bc] Running [ -d /var/www/blogMVC/releases/20180816151733/var/cache ] as deploy@oipnet.info
+ DEBUG [9e97b5bc] Command: [ -d /var/www/blogMVC/releases/20180816151733/var/cache ]
+ DEBUG [a56d396b] Finished in 0.159 seconds with exit status 1 (failed).
+  INFO [99b5c633] Running /usr/bin/env ln -s /var/www/blogMVC/shared/var/cache /var/www/blogMVC/releases/20180816151733/var/cache as deploy@oipnet.info
+ DEBUG [99b5c633] Command: /usr/bin/env ln -s /var/www/blogMVC/shared/var/cache /var/www/blogMVC/releases/20180816151733/var/cache
+  INFO [c6e0fdb2] Finished in 0.157 seconds with exit status 0 (successful).
+ DEBUG [f4d332e4] Running if test ! -d /var/www/blogMVC/releases/20180816151733; then echo "Directory does not exist '/var/www/blogMVC/releases/20180816151733'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [f4d332e4] Command: if test ! -d /var/www/blogMVC/releases/20180816151733; then echo "Directory does not exist '/var/www/blogMVC/releases/20180816151733'" 1>&2; false; fi
+ DEBUG [ed087b75] Finished in 0.157 seconds with exit status 0 (successful).
+  INFO [1782de9c] Running /usr/bin/env composer install --optimize-autoloader as deploy@oipnet.info
+ DEBUG [1782de9c] Command: cd /var/www/blogMVC/releases/20180816151733 && /usr/bin/env composer install --optimize-autoloader
+ DEBUG [708c7ad1] 	Loading composer repositories with package information
+ DEBUG [708c7ad1] 	
+ DEBUG [708c7ad1] 	Installing dependencies (including require-dev) from lock file
+ DEBUG [708c7ad1] 	
+ DEBUG [708c7ad1] 	Package operations: 4 installs, 0 updates, 0 removals
+ DEBUG [708c7ad1] 	
+ DEBUG [708c7ad1] 	  - Installing psr/http-message (1.0.1): 
+ DEBUG [708c7ad1] 	Loading from cache
+ DEBUG [708c7ad1] 	
+ DEBUG [708c7ad1] 	  - Installing symfony/polyfill-mbstring (v1.9.0): 
+ DEBUG [708c7ad1] 	Loading from cache
+ DEBUG [708c7ad1] 	
+ DEBUG [708c7ad1] 	  - Installing symfony/polyfill-ctype (v1.9.0): Loading from cache
+ DEBUG [708c7ad1] 	  - Installing twig/twig (v2.5.0): 
+ DEBUG [708c7ad1] 	Loading from cache
+ DEBUG [708c7ad1] 	
+ DEBUG [708c7ad1] 	Generating optimized autoload files
+ DEBUG [708c7ad1] 	
+  INFO [708c7ad1] Finished in 1.022 seconds with exit status 0 (successful).
+  INFO [dfb23426] Running /usr/bin/env ln -s /var/www/blogMVC/releases/20180816151733 /var/www/blogMVC/releases/current as deploy@oipnet.info
+ DEBUG [dfb23426] Command: /usr/bin/env ln -s /var/www/blogMVC/releases/20180816151733 /var/www/blogMVC/releases/current
+  INFO [ff4853eb] Finished in 0.157 seconds with exit status 0 (successful).
+  INFO [e28bb7b9] Running /usr/bin/env mv /var/www/blogMVC/releases/current /var/www/blogMVC as deploy@oipnet.info
+ DEBUG [e28bb7b9] Command: /usr/bin/env mv /var/www/blogMVC/releases/current /var/www/blogMVC
+  INFO [2dce7898] Finished in 0.157 seconds with exit status 0 (successful).
+ DEBUG [fe153d9e] Running /usr/bin/env ls -x /var/www/blogMVC/releases as deploy@oipnet.info
+ DEBUG [fe153d9e] Command: /usr/bin/env ls -x /var/www/blogMVC/releases
+ DEBUG [d563438f] 	20180816143415	20180816143717	20180816143917	20180816144038	20180816151636
+20180816151733
+ DEBUG [d563438f] Finished in 0.160 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on oipnet.info
+ DEBUG [6b3c7723] Running [ -d /var/www/blogMVC/current ] as deploy@oipnet.info
+ DEBUG [6b3c7723] Command: [ -d /var/www/blogMVC/current ]
+ DEBUG [92d515f6] Finished in 0.155 seconds with exit status 0 (successful).
+ DEBUG [3d085392] Running /usr/bin/env readlink /var/www/blogMVC/current as deploy@oipnet.info
+ DEBUG [3d085392] Command: /usr/bin/env readlink /var/www/blogMVC/current
+ DEBUG [c6b422af] 	/var/www/blogMVC/releases/20180816151733
+ DEBUG [c6b422af] Finished in 0.159 seconds with exit status 0 (successful).
+  INFO [3e4c360c] Running /usr/bin/env rm -rf /var/www/blogMVC/releases/20180816143415 as deploy@oipnet.info
+ DEBUG [3e4c360c] Command: /usr/bin/env rm -rf /var/www/blogMVC/releases/20180816143415
+  INFO [72a59b55] Finished in 0.194 seconds with exit status 0 (successful).
+ DEBUG [481c26a0] Running if test ! -d /var/www/blogMVC/releases; then echo "Directory does not exist '/var/www/blogMVC/releases'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [481c26a0] Command: if test ! -d /var/www/blogMVC/releases; then echo "Directory does not exist '/var/www/blogMVC/releases'" 1>&2; false; fi
+ DEBUG [7caa5e00] Finished in 0.158 seconds with exit status 0 (successful).
+  INFO [f571ae30] Running /usr/bin/env echo "Branch master (at 8e9e3bebf391b8aba49a40bf9b0a92a6a372416f) deployed as release 20180816151733 by arnaud" >> /var/www/blogMVC/revisions.log as deploy@oipnet.info
+ DEBUG [f571ae30] Command: cd /var/www/blogMVC/releases && /usr/bin/env echo "Branch master (at 8e9e3bebf391b8aba49a40bf9b0a92a6a372416f) deployed as release 20180816151733 by arnaud" >> /var/www/blogMVC/revisions.log
+  INFO [d52ad4dc] Finished in 0.161 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-08-16 17:19:56 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [dd55f866] Running /usr/bin/env mkdir -p /tmp as deploy@oipnet.info
+ DEBUG [dd55f866] Command: /usr/bin/env mkdir -p /tmp
+  INFO [6a9b93b6] Finished in 1.370 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-BlogMVC-production-arnaud.sh 0.0%
+  INFO Uploading /tmp/git-ssh-BlogMVC-production-arnaud.sh 100.0%
+  INFO [f33000a7] Running /usr/bin/env chmod 700 /tmp/git-ssh-BlogMVC-production-arnaud.sh as deploy@oipnet.info
+ DEBUG [f33000a7] Command: /usr/bin/env chmod 700 /tmp/git-ssh-BlogMVC-production-arnaud.sh
+  INFO [6fbb864f] Finished in 0.159 seconds with exit status 0 (successful).
+  INFO [d353d030] Running /usr/bin/env git ls-remote git@github.com:Oipnet/blogMvc.git HEAD as deploy@oipnet.info
+ DEBUG [d353d030] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git ls-remote git@github.com:Oipnet/blogMvc.git HEAD )
+ DEBUG [41e16deb] 	8b0ecebc6838f9587460e241885eb42f78330c01	HEAD
+  INFO [41e16deb] Finished in 1.480 seconds with exit status 0 (successful).
+  INFO [29bd8abf] Running /usr/bin/env mkdir -p /var/www/blogMVC/shared /var/www/blogMVC/releases as deploy@oipnet.info
+ DEBUG [29bd8abf] Command: /usr/bin/env mkdir -p /var/www/blogMVC/shared /var/www/blogMVC/releases
+  INFO [23db2cad] Finished in 0.119 seconds with exit status 0 (successful).
+  INFO [f7ca39f4] Running /usr/bin/env mkdir -p /var/www/blogMVC/shared/var/cache as deploy@oipnet.info
+ DEBUG [f7ca39f4] Command: /usr/bin/env mkdir -p /var/www/blogMVC/shared/var/cache
+  INFO [15293990] Finished in 0.158 seconds with exit status 0 (successful).
+ DEBUG [16487898] Running [ -f /var/www/blogMVC/current/REVISION ] as deploy@oipnet.info
+ DEBUG [16487898] Command: [ -f /var/www/blogMVC/current/REVISION ]
+ DEBUG [39d8c5bb] Finished in 0.156 seconds with exit status 0 (successful).
+ DEBUG [d591ddd0] Running /usr/bin/env cat /var/www/blogMVC/current/REVISION 2>/dev/null as deploy@oipnet.info
+ DEBUG [d591ddd0] Command: /usr/bin/env cat /var/www/blogMVC/current/REVISION 2>/dev/null
+ DEBUG [c9251363] 	8e9e3bebf391b8aba49a40bf9b0a92a6a372416f
+ DEBUG [c9251363] Finished in 0.157 seconds with exit status 0 (successful).
+ DEBUG [0e9cc23c] Running [ -f /var/www/blogMVC/repo/HEAD ] as deploy@oipnet.info
+ DEBUG [0e9cc23c] Command: [ -f /var/www/blogMVC/repo/HEAD ]
+ DEBUG [52a1b3ea] Finished in 0.155 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/blogMVC/repo
+ DEBUG [594ad6c7] Running if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [594ad6c7] Command: if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi
+ DEBUG [c091d5f0] Finished in 0.159 seconds with exit status 0 (successful).
+  INFO [1a232160] Running /usr/bin/env git remote set-url origin git@github.com:Oipnet/blogMvc.git as deploy@oipnet.info
+ DEBUG [1a232160] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git remote set-url origin git@github.com:Oipnet/blogMvc.git )
+  INFO [c568d159] Finished in 0.162 seconds with exit status 0 (successful).
+  INFO [9939ea4b] Running /usr/bin/env git remote update --prune as deploy@oipnet.info
+ DEBUG [9939ea4b] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [42fe8420] 	Fetching origin
+ DEBUG [42fe8420] 	From github.com:Oipnet/blogMvc
+   8e9e3be..8b0eceb  master     -> master
+  INFO [42fe8420] Finished in 3.407 seconds with exit status 0 (successful).
+ DEBUG [fcf2fcde] Running if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [fcf2fcde] Command: if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi
+ DEBUG [f22c1e98] Finished in 0.104 seconds with exit status 0 (successful).
+  INFO [cb987075] Running /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816152000 as deploy@oipnet.info
+ DEBUG [cb987075] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816152000 )
+  INFO [6bdf08dc] Finished in 0.159 seconds with exit status 0 (successful).
+  INFO [e750d8ad] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/blogMVC/releases/20180816152000 as deploy@oipnet.info
+ DEBUG [e750d8ad] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/blogMVC/releases/20180816152000 )
+  INFO [ff1a551d] Finished in 0.175 seconds with exit status 0 (successful).
+ DEBUG [2ed12bab] Running if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [2ed12bab] Command: if test ! -d /var/www/blogMVC/repo; then echo "Directory does not exist '/var/www/blogMVC/repo'" 1>&2; false; fi
+ DEBUG [d43c64f1] Finished in 0.156 seconds with exit status 0 (successful).
+ DEBUG [6b7a9bac] Running /usr/bin/env git rev-list --max-count=1 master as deploy@oipnet.info
+ DEBUG [6b7a9bac] Command: cd /var/www/blogMVC/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-BlogMVC-production-arnaud.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [0ca8c00d] 	8b0ecebc6838f9587460e241885eb42f78330c01
+ DEBUG [0ca8c00d] Finished in 0.165 seconds with exit status 0 (successful).
+ DEBUG [72864adf] Running if test ! -d /var/www/blogMVC/releases/20180816152000; then echo "Directory does not exist '/var/www/blogMVC/releases/20180816152000'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [72864adf] Command: if test ! -d /var/www/blogMVC/releases/20180816152000; then echo "Directory does not exist '/var/www/blogMVC/releases/20180816152000'" 1>&2; false; fi
+ DEBUG [08222090] Finished in 0.154 seconds with exit status 0 (successful).
+  INFO [b4e581f1] Running /usr/bin/env echo "8b0ecebc6838f9587460e241885eb42f78330c01" > REVISION as deploy@oipnet.info
+ DEBUG [b4e581f1] Command: cd /var/www/blogMVC/releases/20180816152000 && /usr/bin/env echo "8b0ecebc6838f9587460e241885eb42f78330c01" > REVISION
+  INFO [e0b4a8ee] Finished in 0.158 seconds with exit status 0 (successful).
+  INFO [b0257195] Running /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816152000/var as deploy@oipnet.info
+ DEBUG [b0257195] Command: /usr/bin/env mkdir -p /var/www/blogMVC/releases/20180816152000/var
+  INFO [e524dea3] Finished in 0.157 seconds with exit status 0 (successful).
+ DEBUG [355155ad] Running [ -L /var/www/blogMVC/releases/20180816152000/var/cache ] as deploy@oipnet.info
+ DEBUG [355155ad] Command: [ -L /var/www/blogMVC/releases/20180816152000/var/cache ]
+ DEBUG [56cdc4f6] Finished in 0.156 seconds with exit status 1 (failed).
+ DEBUG [2d84384e] Running [ -d /var/www/blogMVC/releases/20180816152000/var/cache ] as deploy@oipnet.info
+ DEBUG [2d84384e] Command: [ -d /var/www/blogMVC/releases/20180816152000/var/cache ]
+ DEBUG [68b751d1] Finished in 0.164 seconds with exit status 1 (failed).
+  INFO [aafad1c6] Running /usr/bin/env ln -s /var/www/blogMVC/shared/var/cache /var/www/blogMVC/releases/20180816152000/var/cache as deploy@oipnet.info
+ DEBUG [aafad1c6] Command: /usr/bin/env ln -s /var/www/blogMVC/shared/var/cache /var/www/blogMVC/releases/20180816152000/var/cache
+  INFO [c880b672] Finished in 0.156 seconds with exit status 0 (successful).
+ DEBUG [8553ab15] Running if test ! -d /var/www/blogMVC/releases/20180816152000; then echo "Directory does not exist '/var/www/blogMVC/releases/20180816152000'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [8553ab15] Command: if test ! -d /var/www/blogMVC/releases/20180816152000; then echo "Directory does not exist '/var/www/blogMVC/releases/20180816152000'" 1>&2; false; fi
+ DEBUG [aef8b766] Finished in 0.174 seconds with exit status 0 (successful).
+  INFO [46ed788d] Running /usr/bin/env composer install --optimize-autoloader as deploy@oipnet.info
+ DEBUG [46ed788d] Command: cd /var/www/blogMVC/releases/20180816152000 && /usr/bin/env composer install --optimize-autoloader
+ DEBUG [77c11170] 	Loading composer repositories with package information
+ DEBUG [77c11170] 	
+ DEBUG [77c11170] 	Installing dependencies (including require-dev) from lock file
+ DEBUG [77c11170] 	
+ DEBUG [77c11170] 	Package operations: 4 installs, 0 updates, 0 removals
+ DEBUG [77c11170] 	
+ DEBUG [77c11170] 	  - Installing psr/http-message (1.0.1): 
+ DEBUG [77c11170] 	Loading from cache
+ DEBUG [77c11170] 	
+ DEBUG [77c11170] 	  - Installing symfony/polyfill-mbstring (v1.9.0): Loading from cache
+ DEBUG [77c11170] 	  - Installing symfony/polyfill-ctype (v1.9.0): Loading from cache
+ DEBUG [77c11170] 	  - Installing twig/twig (v2.5.0): 
+ DEBUG [77c11170] 	Loading from cache
+ DEBUG [77c11170] 	
+ DEBUG [77c11170] 	Generating optimized autoload files
+ DEBUG [77c11170] 	
+  INFO [77c11170] Finished in 1.602 seconds with exit status 0 (successful).
+  INFO [658e2bbf] Running /usr/bin/env ln -s /var/www/blogMVC/releases/20180816152000 /var/www/blogMVC/releases/current as deploy@oipnet.info
+ DEBUG [658e2bbf] Command: /usr/bin/env ln -s /var/www/blogMVC/releases/20180816152000 /var/www/blogMVC/releases/current
+  INFO [7a6b22db] Finished in 0.164 seconds with exit status 0 (successful).
+  INFO [bd664456] Running /usr/bin/env mv /var/www/blogMVC/releases/current /var/www/blogMVC as deploy@oipnet.info
+ DEBUG [bd664456] Command: /usr/bin/env mv /var/www/blogMVC/releases/current /var/www/blogMVC
+  INFO [539b1c9b] Finished in 0.158 seconds with exit status 0 (successful).
+ DEBUG [9af45a84] Running /usr/bin/env ls -x /var/www/blogMVC/releases as deploy@oipnet.info
+ DEBUG [9af45a84] Command: /usr/bin/env ls -x /var/www/blogMVC/releases
+ DEBUG [64bc514f] 	20180816143717	20180816143917	20180816144038	20180816151636	20180816151733
+20180816152000
+ DEBUG [64bc514f] Finished in 0.158 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on oipnet.info
+ DEBUG [f81663e3] Running [ -d /var/www/blogMVC/current ] as deploy@oipnet.info
+ DEBUG [f81663e3] Command: [ -d /var/www/blogMVC/current ]
+ DEBUG [6915f289] Finished in 0.156 seconds with exit status 0 (successful).
+ DEBUG [61a559ce] Running /usr/bin/env readlink /var/www/blogMVC/current as deploy@oipnet.info
+ DEBUG [61a559ce] Command: /usr/bin/env readlink /var/www/blogMVC/current
+ DEBUG [0ace1d75] 	/var/www/blogMVC/releases/20180816152000
+ DEBUG [0ace1d75] Finished in 0.157 seconds with exit status 0 (successful).
+  INFO [08751633] Running /usr/bin/env rm -rf /var/www/blogMVC/releases/20180816143717 as deploy@oipnet.info
+ DEBUG [08751633] Command: /usr/bin/env rm -rf /var/www/blogMVC/releases/20180816143717
+  INFO [f490bda8] Finished in 0.193 seconds with exit status 0 (successful).
+ DEBUG [48e9f83c] Running if test ! -d /var/www/blogMVC/releases; then echo "Directory does not exist '/var/www/blogMVC/releases'" 1>&2; false; fi as deploy@oipnet.info
+ DEBUG [48e9f83c] Command: if test ! -d /var/www/blogMVC/releases; then echo "Directory does not exist '/var/www/blogMVC/releases'" 1>&2; false; fi
+ DEBUG [74520485] Finished in 0.155 seconds with exit status 0 (successful).
+  INFO [27dc468e] Running /usr/bin/env echo "Branch master (at 8b0ecebc6838f9587460e241885eb42f78330c01) deployed as release 20180816152000 by arnaud" >> /var/www/blogMVC/revisions.log as deploy@oipnet.info
+ DEBUG [27dc468e] Command: cd /var/www/blogMVC/releases && /usr/bin/env echo "Branch master (at 8b0ecebc6838f9587460e241885eb42f78330c01) deployed as release 20180816152000 by arnaud" >> /var/www/blogMVC/revisions.log
+  INFO [7c45ccfb] Finished in 0.160 seconds with exit status 0 (successful).
