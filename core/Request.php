@@ -19,7 +19,7 @@ class Request
     public function __construct()
     {
         $this->protocol = explode('/', $_SERVER['SERVER_PROTOCOL'])[1];
-        foreach (getallheaders() as $name => $value) {
+        foreach (\getallheaders() as $name => $value) {
             $this->headers[$name] = $value;
         }
         $this->parameters['GET'] = $_GET;
